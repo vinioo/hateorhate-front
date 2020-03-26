@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { MaButtonComponent } from './ma-button/ma-button.component';
 import { MaCardComponent } from './ma-card/ma-card.component';
 import { MaImageLabelComponent } from './ma-image-label/ma-image-label.component';
+import { MaFooterComponent } from './ma-footer/ma-footer.component';
 
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import { MaImageLabelComponent } from './ma-image-label/ma-image-label.component
     MaButtonComponent,
     MaCardComponent,
     MaImageLabelComponent,
+    MaFooterComponent
   ],
   imports: [
     BrowserModule
