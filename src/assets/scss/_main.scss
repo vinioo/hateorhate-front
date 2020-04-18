@@ -1,0 +1,29 @@
+@import 'reset';
+@import 'colors';
+
+.full {
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+    height: "auto";
+}
+
+.wrapper {
+    margin-right: auto;
+    margin-left: auto;
+    height:  "100%";
+    background: "transparent";
+    @media (min-width: 768px) {
+      padding-right: 15px;
+      padding-left: 15px;
+      width: 750px;
+    }
+    @media (min-width: 992px) {
+      padding-right: 15px;
+      padding-left: 15px;
+      width: 970px;
+    }
+    @media (min-width: 1200px) {
+      width: 1200px;
+    }
+}
