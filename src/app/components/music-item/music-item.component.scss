@@ -1,0 +1,26 @@
+@import 'src/assets/scss/_main.scss';
+
+.music__item {
+    max-width: 420px;
+    max-height: 150px;
+    display: flex;
+    &__image {
+        width: auto;   
+        margin-right: 16px; 
+        img {
+            max-width: 158px;
+            max-height: 150px;
+        }
+    }
+    &__content {
+        width: auto;
+        &__title {
+            h4 {
+                font-weight: 600;
+            }
+            p {
+                margin-top: 4px;
+            }
+        }
+    }
+}

@@ -6,10 +6,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ma-navbar.component.scss']
 })
 export class MaNavbarComponent implements OnInit {
+  public theme: string;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  toggleTheme() {
+    if (!document.documentElement.dataset.theme) {
+      document.documentElement.setAttribute('data-theme', 'dark')
+      this.theme = 'dark';
+    } else {
+      document.documentElement.removeAttribute('data-theme')
+      this.theme = 'light';
+    }
   }
 
 }

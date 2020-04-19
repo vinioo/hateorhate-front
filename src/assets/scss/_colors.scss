@@ -1,0 +1,40 @@
+:root {
+    --main-white: #F2F2F2;
+}
+
+html {
+    --main-text: #303A52;
+    --main-text--secondary: #171B27;
+    --primary: '';
+    --primary--light: '';
+    --primary--darker: #f2f2f2;
+    --secondary: '';
+    --secondary--light: '';
+    --secondary--darker: '';
+    --accent: '';
+    --accent-light: '';
+    --accent-darker: '';
+    --complementary: '';
+    --complementary--light: '';
+    --complementary--darker: '';
+    --gradient--primary: white;
+}
+
+html[data-theme='dark'] {
+    --main-text: #F2F2F2;
+    --main-text--secondary: #E0E0E0;
+    --main-text--complementary: #BDBDBD;
+    --primary: '';
+    --primary--light: '';
+    --primary--darker: #171B27;
+    --secondary: '';
+    --secondary--light: '';
+    --secondary--darker: '';
+    --accent: '';
+    --accent-light: '';
+    --accent-darker: '';
+    --complementary: '';
+    --complementary--light: '';
+    --complementary--darker: '';
+    --gradient--primary: linear-gradient(180deg, #303A52 20.55%, #171B27 100%);
+}
