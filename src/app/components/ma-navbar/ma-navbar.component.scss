@@ -7,7 +7,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+    text-transform: uppercase;
+    box-shadow: var(--box-shadow--bottom);
+    a { 
+        color: var(--main-text--complementary);
+    }
+    font-weight: 500;
     ul {
         display: flex;
         li {
@@ -19,6 +24,8 @@
     &-wrapper {
         display: flex;
         justify-content: space-between;
+        align-items: center;
+        height: 100%;
     }
 
     &-left {
@@ -31,5 +38,7 @@
 
     &__login {
         display: flex;
+        align-items: center;
+        height: 100%;
     }
 }

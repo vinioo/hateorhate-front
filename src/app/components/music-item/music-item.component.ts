@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'ma-music-item',
@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./music-item.component.scss']
 })
 export class MusicItemComponent implements OnInit {
-
-  constructor() { }
+  @Input() item;
+  
+  constructor() { 
+  }
 
   ngOnInit(): void {
+    console.log(this.item);
   }
 
 }

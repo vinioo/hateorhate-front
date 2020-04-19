@@ -1,10 +1,12 @@
 :root {
     --main-white: #F2F2F2;
+    --box-shadow--bottom: 0px 4px 4px rgba(108, 108, 108, 0.5);
 }
 
 html {
     --main-text: #303A52;
     --main-text--secondary: #171B27;
+    --main-text--complementary: #171B27;
     --primary: '';
     --primary--light: '';
     --primary--darker: #f2f2f2;
@@ -17,7 +19,7 @@ html {
     --complementary: '';
     --complementary--light: '';
     --complementary--darker: '';
-    --gradient--primary: white;
+    --gradient--primary: linear-gradient(180deg, #F5F5F5 0%, #FAFAFA 94.56%);;
 }
 
 html[data-theme='dark'] {

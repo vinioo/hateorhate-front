@@ -6,11 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ma-navbar.component.scss']
 })
 export class MaNavbarComponent implements OnInit {
-  public theme: string;
+  public theme: string = 'light';
 
   constructor() { }
 
-  ngOnInit(): void {
+  async ngOnInit() {
   }
 
   toggleTheme() {

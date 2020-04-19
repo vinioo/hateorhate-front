@@ -13,6 +13,7 @@
         }
     }
     &__content {
+        flex-wrap: wrap;
         width: auto;
         &__title {
             h4 {

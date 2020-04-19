@@ -1,41 +1,48 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders, HttpParams } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SpotifyService {
+  private _accessToken;
+  private generalHeaders;
 
-  clientId = '1c33ffa929cf40059d3f1308268fd817';
-  secret = '9d70e4304212491cb6ce555eac1b8036';
-  url = '';
-
-  constructor(private HttpClient: HttpClient) { }
-
-    // Headers
-    httpOptions = {
-      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  set accessToken(token: string) {
+    this.generalHeaders = {
+      headers: new HttpHeaders({
+        'Authorization': 'Bearer ' + token
+      })
     }
+  }
 
-      // Obtem todos os carros
-  // getCars(): Observable {
-  //   return this.httpClient.get(this.url)
-  //     .pipe(
-  //       retry(2),
-  //       catchError(this.handleError))
-  // }
+  get accessToken() {
+    return this._accessToken;
+  }
 
-    // Manipulação de erros
-    // handleError(error: HttpErrorResponse) {
-    //   let errorMessage = '';
-    //   if (error.error instanceof ErrorEvent) {
-    //     // Erro ocorreu no lado do client
-    //     errorMessage = error.error.message;
-    //   } else {
-    //     // Erro ocorreu no lado do servidor
-    //     errorMessage = `Código do erro: ${error.status}, ` + `menssagem: ${error.message}`;
-    //   }
-    //   console.log(errorMessage);
-    //   return throwError(errorMessage);
-    // };
+
+  authorizationHeaders = {
+    headers: new HttpHeaders({
+    'Content-Type': 'application/x-www-form-urlencoded',
+    'Authorization': `Basic MWMzM2ZmYTkyOWNmNDAwNTlkM2YxMzA4MjY4ZmQ4MTc6OWQ3MGU0MzA0MjEyNDkxY2I2Y2U1NTVlYWMxYjgwMzY=`
+  }) 
+}
+  
+
+  private body = new HttpParams().set('grant_type', 'client_credentials');
+
+  constructor(private httpClient: HttpClient) { }
+  public async authorize() {
+    const response = await this.httpClient.post('https://cors-anywhere.herokuapp.com/https://accounts.spotify.com/api/token', this.body, this.authorizationHeaders).toPromise();
+
+    this.accessToken = response['access_token'];
+  }
+
+  public async getAlbums() {
+    console.log('antes');
+    await this.authorize();
+    console.log(this.generalHeaders)
+    return this.httpClient.get('https://cors-anywhere.herokuapp.com/https://api.spotify.com/v1/browse/new-releases', this.generalHeaders).toPromise();
+  }
 }

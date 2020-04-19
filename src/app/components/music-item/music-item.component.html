@@ -1,11 +1,11 @@
 <div class="music__item">
     <div class="music__item__image">
-        <img src="assets/img/strokes.jpg">
+        <img src={{item.images[0].url}}>
     </div>
     <div class="music__item__content">
         <div class="music__item__content__title">
-            <h4>You only live once</h4>
-            <p>The Strokes</p>
+            <h4>{{item.name}}</h4>
+            <p>{{item.artists[0].name}}</p>
             <div>stars</div>
         </div>
         <div class="music__item__content__body">
