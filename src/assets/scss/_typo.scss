@@ -12,6 +12,10 @@ h3 {
 }
 
 h4 {
+    font-size: 24px;
+}
+
+h5 {
     font-size: 18px;
 }
 
@@ -19,9 +23,13 @@ p, a {
     font-size: 14px;
 }
 
-h1, h2, h3, h4, h5, p, a {
+small {
+    font-size: 12px;
+}
+
+h1, h2, h3, h4, h5, p, a, small {
     font-family: $work_sans;
-    color: var(--main-text);
+    color: var(--main--text);
 }
 
 a {

@@ -9,8 +9,10 @@
     align-items: center;
     text-transform: uppercase;
     box-shadow: var(--box-shadow--bottom);
+    position: relative;
+    z-index: 1;
     a { 
-        color: var(--main-text--complementary);
+        color: var(--main--text--complementary);
     }
     font-weight: 500;
     ul {

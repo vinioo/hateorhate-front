@@ -34,15 +34,21 @@ export class SpotifyService {
 
   constructor(private httpClient: HttpClient) { }
   public async authorize() {
-    const response = await this.httpClient.post('https://cors-anywhere.herokuapp.com/https://accounts.spotify.com/api/token', this.body, this.authorizationHeaders).toPromise();
+    try {
+      const response = await this.httpClient.post('https://accounts.spotify.com/api/token', this.body, this.authorizationHeaders).toPromise();
 
-    this.accessToken = response['access_token'];
+      this.accessToken = response['access_token'];
+    } catch(err) {
+      console.error(err);
+    }
   }
 
   public async getAlbums() {
-    console.log('antes');
-    await this.authorize();
-    console.log(this.generalHeaders)
-    return this.httpClient.get('https://cors-anywhere.herokuapp.com/https://api.spotify.com/v1/browse/new-releases', this.generalHeaders).toPromise();
+    try {
+      await this.authorize();
+      return this.httpClient.get('https://api.spotify.com/v1/browse/new-releases', this.generalHeaders).toPromise();
+    } catch(err) {
+      console.error(err);
+    }
   }
 }
