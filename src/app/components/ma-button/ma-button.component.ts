@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ma-button.component.scss']
 })
 export class MaButtonComponent implements OnInit {
-
   constructor() { }
 
   ngOnInit(): void {

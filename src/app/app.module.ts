@@ -13,6 +13,7 @@ import { MaNavbarComponent } from './components/ma-navbar/ma-navbar.component';
 import { SearchPage } from './pages/search/search.component';
 import { MusicItemComponent } from './components/music-item/music-item.component';
 import { MaInputComponent } from './ma-input/ma-input.component';
+import { HomePage } from './pages/home/home.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { MaInputComponent } from './ma-input/ma-input.component';
     MaNavbarComponent,
     SearchPage,
     MusicItemComponent,
-    MaInputComponent
+    MaInputComponent,
+    HomePage
   ],
   imports: [
     BrowserModule,

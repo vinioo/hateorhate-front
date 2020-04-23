@@ -1,0 +1,14 @@
+button {
+    width: 320px;
+    height: 56px;
+    border-radius: 56px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: var(--complementary);
+    p {
+        font-size: 22px;
+        color: var(--main--white);
+        font-weight: 600;
+    }
+}

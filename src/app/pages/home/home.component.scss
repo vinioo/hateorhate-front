@@ -1,0 +1,26 @@
+.home {
+    background: var(--main--black);
+    height: calc(100% - 80px);
+    .wrapper {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        .texts {
+            width: 520px;
+            display: flex;
+            flex-direction: column;
+            h1 {
+                color: var(--grey--5);
+                font-weight: 900;
+                line-height: 90px;
+                margin-bottom: 40px;
+            }
+            h4 {
+                margin-bottom: 48px;
+                width: 330px;
+                color: var(--grey--5);
+                font-weight: 400;
+            }
+        }
+    }
+}
