@@ -1,6 +1,7 @@
 .home {
     background: var(--main--black);
     height: calc(100% - 80px);
+    min-height: 600px;
     .wrapper {
         display: flex;
         align-items: center;
@@ -23,4 +24,49 @@
             }
         }
     }
+}
+
+.row__text {
+    color: var(--main--black--light);
+    padding: 8rem;
+    text-align: center;
+    h2 {
+        font-weight: 900;
+        margin-bottom: 16px;
+    }
+    h4 {
+        font-weight: 500;
+        margin-bottom: 40px;
+    }
+}
+
+.third {
+    background: var(--main--black);
+    .wrapper {
+        min-height: 660px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .image {
+        width: 50%;
+    } 
+    .content {
+        width: 50%;
+        h2, h4 {
+            color: var(--grey--5); 
+        }
+        h2 {
+            margin-bottom: 16px;
+            font-weight: 900;
+        }
+        h4 {
+            font-weight: 500;
+        }
+    }
+}
+
+footer {
+    background: var(--main--black);
+    height: 120px;
 }

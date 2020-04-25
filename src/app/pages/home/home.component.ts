@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePage implements OnInit {
 
-  constructor() { }
-
+  constructor() { 
+  }
+  
   ngOnInit(): void {
+    document.documentElement.setAttribute('data-theme', 'dark');
   }
 
 }

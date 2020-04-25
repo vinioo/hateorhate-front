@@ -1,0 +1,9 @@
+input {
+    width: 380px;
+    &--default {
+        height: 55px;
+    }   
+    &--small {
+        height: 46px;
+    }
+}

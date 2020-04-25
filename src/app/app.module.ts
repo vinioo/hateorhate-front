@@ -11,9 +11,10 @@ import { MaImageLabelComponent } from './components/ma-image-label/ma-image-labe
 import { MaFooterComponent } from './components/ma-footer/ma-footer.component';
 import { MaNavbarComponent } from './components/ma-navbar/ma-navbar.component';
 import { SearchPage } from './pages/search/search.component';
-import { MusicItemComponent } from './components/music-item/music-item.component';
-import { MaInputComponent } from './ma-input/ma-input.component';
+import { MusicItemComponent } from './components/ma-music-item/music-item.component';
 import { HomePage } from './pages/home/home.component';
+import { RecommendedComponent } from './pages/recommended/recommended.component';
+import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
   declarations: [
@@ -25,8 +26,10 @@ import { HomePage } from './pages/home/home.component';
     MaNavbarComponent,
     SearchPage,
     MusicItemComponent,
-    MaInputComponent,
-    HomePage
+    HomePage,
+    MaButtonComponent,
+    RecommendedComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
