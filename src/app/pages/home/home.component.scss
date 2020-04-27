@@ -1,7 +1,21 @@
 .home {
+    overflow-x: hidden;
     background: var(--main--black);
-    height: calc(100% - 80px);
+    height: calc(100%);
+    z-index: 1;
     min-height: 600px;
+    position: relative;
+    &::before {
+        content: '';
+        width: 100%;
+        height: calc(100%);
+        z-index: -1;
+        position: absolute;
+        background: url('/assets/img/blob.svg');
+        background-repeat: no-repeat;
+        background-size: 110% 110%;
+        
+    }
     .wrapper {
         display: flex;
         align-items: center;
@@ -27,7 +41,6 @@
 }
 
 .row__text {
-    color: var(--main--black--light);
     padding: 8rem;
     text-align: center;
     h2 {
@@ -37,6 +50,9 @@
     h4 {
         font-weight: 500;
         margin-bottom: 40px;
+    }
+    h2, h4 {
+        color: var(--main--black--light);
     }
 }
 

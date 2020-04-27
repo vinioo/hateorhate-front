@@ -2,22 +2,20 @@
     <div class="wrapper navbar-wrapper">
         <div class="navbar-left">
             <div class="navbar__logo">
-                <img *ngIf="theme == 'dark'" src="assets/img/rateorhatelogo.svg" alt="logo">
-                <img *ngIf="theme == 'light'" src="assets/img/rateorhateblack.svg" alt="logo">
+                <img src="assets/img/rateorhatelogo.svg" alt="logo">
             </div>
             <div class="navbar__actions">
                 <ul>
-                    <li><a [routerLink]="['/']">Home</a></li>
-                    <li><a [routerLink]="['/search']">Search</a></li>
-                    <li><a [routerLink]="['/ajuda']">Ajuda</a></li>
+                    <li><a [routerLink]="['/']">HOW TO USE</a></li>
+                    <li><a [routerLink]="['/search']">HELP</a></li>
                 </ul>
             </div>
         </div>
         <div class="navbar__login">
-            <a>Entrar</a>
-            <button (click)="toggleTheme()">
-                Cadastrar
-            </button>
+            <a [routerLink]="['/login']">SIGNUP</a>
+            <a (click)="toggleTheme()" class="bold">
+                login
+            </a>
         </div>
     </div>
 </div>

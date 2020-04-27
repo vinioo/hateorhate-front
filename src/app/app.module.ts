@@ -14,7 +14,8 @@ import { SearchPage } from './pages/search/search.component';
 import { MusicItemComponent } from './components/ma-music-item/music-item.component';
 import { HomePage } from './pages/home/home.component';
 import { RecommendedComponent } from './pages/recommended/recommended.component';
-import { LoginComponent } from './pages/login/login.component';
+import { LoginPage } from './pages/login/login.component';
+import { MaInputComponent } from './components/ma-input/ma-input.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { LoginComponent } from './pages/login/login.component';
     HomePage,
     MaButtonComponent,
     RecommendedComponent,
-    LoginComponent
+    LoginPage,
+    MaInputComponent
   ],
   imports: [
     BrowserModule,
