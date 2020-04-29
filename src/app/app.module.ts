@@ -13,7 +13,7 @@ import { MaNavbarComponent } from './components/ma-navbar/ma-navbar.component';
 import { SearchPage } from './pages/search/search.component';
 import { MusicItemComponent } from './components/ma-music-item/music-item.component';
 import { HomePage } from './pages/home/home.component';
-import { RecommendedComponent } from './pages/recommended/recommended.component';
+import { RecommendedPage } from './pages/recommended/recommended.component';
 import { LoginPage } from './pages/login/login.component';
 import { MaInputComponent } from './components/ma-input/ma-input.component';
 
@@ -29,7 +29,7 @@ import { MaInputComponent } from './components/ma-input/ma-input.component';
     MusicItemComponent,
     HomePage,
     MaButtonComponent,
-    RecommendedComponent,
+    RecommendedPage,
     LoginPage,
     MaInputComponent
   ],

@@ -1,0 +1,26 @@
+@import 'src/assets/scss/_main.scss';
+
+.search {
+    background: var(--gradient--primary);
+    .main__title {
+        display: flex;
+        flex-direction: column;
+        padding-top: 42px;
+        div {
+            margin-top: 16px;
+        }
+        h3 {
+            font-weight: 600;
+            span {
+                font-weight: 700;
+            }
+        }
+    }
+    section {
+        margin-top: 40px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 400px);
+        justify-content: space-between;
+        row-gap: 32px;
+    }
+}

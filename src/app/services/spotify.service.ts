@@ -51,4 +51,13 @@ export class SpotifyService {
       console.error(err);
     }
   }
+
+  public async getSongs() {
+    try {
+      await this.authorize();
+      return this.httpClient.get('https://api.spotify.com/v1/tracks', this.generalHeaders).toPromise();
+    } catch(err) {
+      console.error(err);
+    }
+  }
 }
