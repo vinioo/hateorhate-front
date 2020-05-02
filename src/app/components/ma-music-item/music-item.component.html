@@ -1,7 +1,7 @@
 <div class="music__item">
     <div class="music__item__image">
         <h4>8.5</h4>
-        <img src={{item.images[0].url}}>
+        <img src={{item.images[0].url}} (click)="openPlayer()">
     </div>
     <div class="music__item__content">
         <div class="music__item__content__title">
@@ -18,3 +18,5 @@
         </div>
     </div>
 </div>
+
+<ma-player *ngIf="open" albumId={{item.id}}></ma-player>

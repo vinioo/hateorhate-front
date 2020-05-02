@@ -7,12 +7,17 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class MusicItemComponent implements OnInit {
   @Input() item;
+
+  open: boolean;
+
+  constructor() {
+  }
   
-  constructor() { 
+  ngOnInit(): void {
   }
 
-  ngOnInit(): void {
-    console.log(this.item);
+  openPlayer() {
+    this.open = true;
   }
 
 }

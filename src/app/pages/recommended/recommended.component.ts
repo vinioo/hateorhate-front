@@ -8,9 +8,13 @@ import { SpotifyService } from '../../services/spotify.service';
 })
 export class RecommendedPage implements OnInit {
 
-  constructor() { }
+  constructor(private spotifyService: SpotifyService) { }
 
-  ngOnInit(): void {
+  songs = [];
+
+  async ngOnInit(): Promise<void> {
+    const response: any = await this.spotifyService.getSongs();
+    this.songs = response.tracks;
+
   }
-
 }
