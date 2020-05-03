@@ -1,13 +1,31 @@
-<div class="full search">
+<div class="full content">
     <main class="wrapper">
-        <div class="main__title">
-            <h3>Search results for <span>Strokes</span></h3>
-            <div>
-                <h5>Filter by:</h5>
+        <div>
+            <div class="main__title">
+                <h3>Recommended Songs</h3>
             </div>
+            <ma-line></ma-line>
+            <section>
+                <!-- O componente ma-music-item será exibido aqui (mostraremos 3 por linha) -->
+            </section>
         </div>
-        <section>
-            <ma-music-item *ngFor="let item of songs; let i = index" [item]="item"></ma-music-item>
-        </section>
+        <div>
+            <div class="main__title">
+                <h3>Recommended Albums</h3>
+            </div>
+            <ma-line></ma-line>
+            <section>
+                <!-- O componente ma-music-item será exibido aqui (mostraremos 3 por linha) -->
+            </section>
+        </div>
+        <div>
+            <div class="main__title">
+                <h3>Recommended Artists</h3>
+            </div>
+            <ma-line></ma-line>
+            <section>
+                <!-- O componente ma-music-item será exibido aqui (mostraremos 3 por linha) -->
+            </section>
+        </div>
     </main>
 </div>

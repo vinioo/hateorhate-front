@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { PlayerService } from 'src/app/services/player.service';
 
 @Component({
   selector: 'ma-music-item',
@@ -10,14 +11,14 @@ export class MusicItemComponent implements OnInit {
 
   open: boolean;
 
-  constructor() {
+  constructor(private playerService: PlayerService) {
   }
   
   ngOnInit(): void {
   }
 
   openPlayer() {
-    this.open = true;
+    this.playerService.setPlayerUrl(this.item.id);
   }
 
 }

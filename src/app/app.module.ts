@@ -17,6 +17,7 @@ import { RecommendedPage } from './pages/recommended/recommended.component';
 import { LoginPage } from './pages/login/login.component';
 import { MaInputComponent } from './components/ma-input/ma-input.component';
 import { MaPlayerComponent } from './components/ma-player/ma-player.component';
+import { MaLineComponent } from './components/ma-line/ma-line.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { MaPlayerComponent } from './components/ma-player/ma-player.component';
     RecommendedPage,
     LoginPage,
     MaInputComponent,
-    MaPlayerComponent
+    MaPlayerComponent,
+    MaLineComponent
   ],
   imports: [
     BrowserModule,
