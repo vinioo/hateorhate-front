@@ -19,6 +19,8 @@ import { MaInputComponent } from './components/ma-input/ma-input.component';
 import { MaPlayerComponent } from './components/ma-player/ma-player.component';
 import { MaLineComponent } from './components/ma-line/ma-line.component';
 import { MaNavbarInternComponent } from './components/ma-navbar-intern/ma-navbar-intern.component';
+import { MaAlbumItemComponent } from './components/ma-album-item/ma-album-item.component';
+import { MaArtistItemComponent } from './components/ma-artist-item/ma-artist-item.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { MaNavbarInternComponent } from './components/ma-navbar-intern/ma-navbar
     MaInputComponent,
     MaPlayerComponent,
     MaLineComponent,
-    MaNavbarInternComponent
+    MaNavbarInternComponent,
+    MaAlbumItemComponent,
+    MaArtistItemComponent
   ],
   imports: [
     BrowserModule,

@@ -2,7 +2,8 @@
 
 .search {
     background: var(--gradient--primary);
-    height: 100%;
+    height: auto;
+    padding-bottom: 4rem;
     .main__title {
         display: flex;
         flex-direction: column;

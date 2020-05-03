@@ -9,15 +9,16 @@ import { SpotifyService } from '../../services/spotify.service';
 export class SearchPage implements OnInit {
 
   albums = [];
+  artists = [];
+  tracks = [];
 
   constructor(private spotifyService: SpotifyService) { }
 
   async ngOnInit() {
-    const response: any = await this.spotifyService.getAlbums();
+    const response: any = await this.spotifyService.search();
+    this.tracks = response.tracks.items;
     this.albums = response.albums.items;
-
-    const musica = new Audio('https://open.spotify.com/track/7oK9VyNzrYvRFo7nQEYkWN');
-    await musica.play();
+    this.artists = response.artists.items;
   }
 
 }

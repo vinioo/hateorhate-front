@@ -5,18 +5,17 @@ import { Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class PlayerService {
-  playerUrl: string;
+  currentSong: HTMLAudioElement;
+  isPlaying: boolean;
   playerUrlChange: Subject<string> = new Subject<string>();
 
-  constructor() { 
-    this.playerUrlChange.subscribe((value) => {
-      this.playerUrl = value;
-    });
+  constructor() {
 
   }
-  
-  public setPlayerUrl(url: string) {
-    this.playerUrlChange.next(url);
-  }
 
+  async play(music: HTMLAudioElement) {
+    this.currentSong && await this.currentSong.pause();
+    this.currentSong = music;
+    this.currentSong.play();
+  }
 }

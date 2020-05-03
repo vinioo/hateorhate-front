@@ -6,9 +6,10 @@ input {
     font-size: 14px;
     font-weight: 600;
     color: var(--main--black--light);
+    outline: none;
     border: none;
-    ::placeholder, ::-moz-placeholder {
-        color: var(--grey--5);
+    ::placeholder, ::-moz-placeholder, ::-webkit-input-placeholder {
+        color: var(--grey--5) !important;
     }
     
     &:focus {

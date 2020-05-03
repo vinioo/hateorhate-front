@@ -1,12 +1,11 @@
 <div class="music__item">
     <div class="music__item__image">
         <h4>8.5</h4>
-        <img src={{item.album.images[0].url}} (click)="togglePlayer()">
+        <img *ngIf="item.images.length" src={{item.images[0].url}}>
     </div>
     <div class="music__item__content">
         <div class="music__item__content__title">
             <h5>{{item.name}}</h5>
-            <p>{{item.artists[0].name}}</p>
             <div>stars</div>
         </div>
         <div class="music__item__content__body">

@@ -10,15 +10,27 @@ export class MusicItemComponent implements OnInit {
   @Input() item;
 
   open: boolean;
+  playing: boolean;
+  music: HTMLAudioElement;
 
   constructor(private playerService: PlayerService) {
   }
-  
+
   ngOnInit(): void {
   }
 
-  openPlayer() {
-    this.playerService.setPlayerUrl(this.item.id);
+  async togglePlayer() {
+    this.music = new Audio(this.item?.preview_url);
+    this.playerService.play(this.music);
+    // if (this.playing) {
+    //   this.playing = false;
+    //   await this.music.pause();
+    // } else {
+    //   if (this.music) {
+    //     this.playing = true;
+    //     await this.music.play();
+    //   }
+    // }
   }
 
 }

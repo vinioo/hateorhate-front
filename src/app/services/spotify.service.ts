@@ -67,12 +67,12 @@ export class SpotifyService {
     }
   }
 
-  public async search(search?: string) {
+  public async search(search?: string, limit?: string) {
     try {
       await this.authorize();
 
       const params = new HttpParams()
-        .set('q', 'the killers')
+        .set('q', 'Strokes')
         .set('type', 'track,artist,album')
         .set('limit', '6')
         .set('market', 'BR');
