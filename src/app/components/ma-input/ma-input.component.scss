@@ -1,4 +1,4 @@
-input {
+.input {
     width: 380px;
     height: 55px; 
     border-radius: 50px;
@@ -8,9 +8,6 @@ input {
     color: var(--main--black--light);
     outline: none;
     border: none;
-    ::placeholder, ::-moz-placeholder, ::-webkit-input-placeholder {
-        color: var(--grey--5) !important;
-    }
     
     &:focus {
         border: 2px solid var(--complementary);
@@ -18,4 +15,8 @@ input {
     &--small {
         height: 46px;
     }
+}
+
+input::placeholder {
+    color: var(--grey--4) !important;
 }
