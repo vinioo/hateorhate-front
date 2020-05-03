@@ -15,6 +15,9 @@ export class SearchPage implements OnInit {
   async ngOnInit() {
     const response: any = await this.spotifyService.getAlbums();
     this.albums = response.albums.items;
+
+    const musica = new Audio('https://open.spotify.com/track/7oK9VyNzrYvRFo7nQEYkWN');
+    await musica.play();
   }
 
 }

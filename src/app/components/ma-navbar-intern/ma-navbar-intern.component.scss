@@ -1,0 +1,49 @@
+@import 'src/assets/scss/_main.scss';
+
+.navbar {
+    width: 100%;
+    height: 80px;
+    background: var(--primary--darker);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+    z-index: 2;
+    font-weight: 500;
+    ul {
+        display: flex;
+        li {
+            margin: 8px;
+            list-style: none;
+        }
+    }
+
+    &-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+    }
+
+    &-left {
+        display: flex;
+    }
+
+    &__actions {
+        margin-left: 32px;
+    }
+
+    &__login {
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+
+    &__actions, &__login {
+        a {
+            color: var(--main--text--secondary);
+            margin-left: 40px;
+            text-transform: uppercase;
+        }
+    }
+}
