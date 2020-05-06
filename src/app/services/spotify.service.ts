@@ -57,7 +57,7 @@ export class SpotifyService {
       await this.authorize();
 
       const params = new HttpParams()
-      .set('market', 'ES');
+      .set('market', 'BR');
 
       return this.httpClient
         .get('https://api.spotify.com/v1/tracks/3n3Ppam7vgaVa1iaRUc9Lp', { ...this.generalHeaders, params })
@@ -79,6 +79,23 @@ export class SpotifyService {
 
       return this.httpClient.get('https://api.spotify.com/v1/search', { ...this.generalHeaders, params }).toPromise();
     } catch (err) {
+      console.error(err);
+    }
+  }
+
+  public async getRecommendations() {
+    try {
+      await this.authorize();
+
+      const params = new HttpParams()
+        .set('limit', '6')
+        .set('market', 'BR')
+        .set('seed_genres', 'rap,pop,rock')
+        .set('min_popularity', '80');
+
+      return this.httpClient.get('https://api.spotify.com/v1/recommendations',
+        {...this.generalHeaders, params}).toPromise();
+    } catch(err) {
       console.error(err);
     }
   }

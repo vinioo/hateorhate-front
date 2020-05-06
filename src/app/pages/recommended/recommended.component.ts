@@ -10,11 +10,10 @@ export class RecommendedPage implements OnInit {
 
   constructor(private spotifyService: SpotifyService) { }
 
-  songs = [];
+  public songs = [];
 
   async ngOnInit(): Promise<void> {
-    const response: any = await this.spotifyService.getSongs();
+    const response: any = await this.spotifyService.getRecommendations();
     this.songs = response.tracks;
-
   }
 }
