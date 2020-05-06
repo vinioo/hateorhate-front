@@ -7,25 +7,16 @@
             </div>
             <ma-line></ma-line>
             <section>
-                <!-- O componente ma-music-item será exibido aqui (mostraremos 3 por linha) -->
+              <ma-music-item *ngFor="let item of songs" [item]="item"></ma-music-item>
             </section>
         </div>
         <div>
             <div class="main__title">
-                <h3>Recommended Albums</h3>
+                <h3>Top Songs</h3>
             </div>
             <ma-line></ma-line>
             <section>
-                <!-- O componente ma-music-item será exibido aqui (mostraremos 3 por linha) -->
-            </section>
-        </div>
-        <div>
-            <div class="main__title">
-                <h3>Recommended Artists</h3>
-            </div>
-            <ma-line></ma-line>
-            <section>
-                <!-- O componente ma-music-item será exibido aqui (mostraremos 3 por linha) -->
+                <!-- O componente ma-music-album será exibido aqui (mostraremos 3 por linha) -->
             </section>
         </div>
     </main>
