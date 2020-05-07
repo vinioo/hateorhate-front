@@ -9,6 +9,9 @@ import { Component, OnInit, Input } from '@angular/core';
 export class MaInputComponent implements OnInit {
   @Input() placeholder: string;
   @Input() size = 'default';
+  @Input() name;
+  @Input() id;
+  // @Input() modelName;
 
   constructor() { }
 

@@ -7,7 +7,7 @@ import { SpotifyService } from '../../services/spotify.service';
   styleUrls: ['./search.component.scss']
 })
 export class SearchPage implements OnInit {
-
+  search = 'Strokes';
   albums = [];
   artists = [];
   tracks = [];
@@ -15,7 +15,15 @@ export class SearchPage implements OnInit {
   constructor(private spotifyService: SpotifyService) { }
 
   async ngOnInit() {
-    const response: any = await this.spotifyService.search();
+    const response: any = await this.spotifyService.search(this.search);
+    this.tracks = response.tracks.items;
+    this.albums = response.albums.items;
+    this.artists = response.artists.items;
+  }
+
+  async getSearchQuery($event) {
+    this.search = $event;
+    const response: any = await this.spotifyService.search($event);
     this.tracks = response.tracks.items;
     this.albums = response.albums.items;
     this.artists = response.artists.items;

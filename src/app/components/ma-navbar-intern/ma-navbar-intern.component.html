@@ -6,8 +6,9 @@
             </div>
         </div>
         <div class="navbar__search">
-            <form>
-                <ma-input size="small"></ma-input>
+            <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+                <ma-input size="small" id="query" [(ngModel)]="query" name="query"></ma-input>
+                <button type="submit">Enviar</button>
             </form>
         </div>
         <div class="navbar__login">

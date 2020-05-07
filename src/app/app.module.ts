@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { RouteRoutingModule } from './route/route-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { MaButtonComponent } from './components/ma-button/ma-button.component';
@@ -46,7 +47,8 @@ import { MaArtistItemComponent } from './components/ma-artist-item/ma-artist-ite
   imports: [
     BrowserModule,
     RouteRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
