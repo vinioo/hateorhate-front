@@ -29,14 +29,36 @@
         display: flex;
     }
 
+    &__search {
+        form {
+            display: flex;
+            justify-content: flex-end;
+            position: relative;
+            width: 100%;
+            input {
+                width: 380px;
+            }
+            button {
+                border-radius: 20px;
+                height: 100%;
+                position: absolute;
+                z-index: 1;
+            }
+            
+        }
+    }
+
     &__actions {
         margin-left: 32px;
     }
 
-    &__login {
+    &__user {
         display: flex;
         align-items: center;
-        height: 100%;
+        height: 50px;
+        background: lightcoral;
+        width: 50px;
+        border-radius: 50%;
     }
 
     &__actions, &__login {

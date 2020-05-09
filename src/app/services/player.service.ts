@@ -14,6 +14,11 @@ export class PlayerService {
   }
 
   async play(music: HTMLAudioElement) {
+    if (music.src === this?.currentSong?.src) {
+      this.currentSong.pause();
+      this.currentSong = undefined;
+      return;
+    }
     this.currentSong && await this.currentSong.pause();
     this.currentSong = music;
     this.currentSong.play();

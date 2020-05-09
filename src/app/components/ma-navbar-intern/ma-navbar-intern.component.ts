@@ -15,8 +15,7 @@ export class MaNavbarInternComponent implements OnInit {
   }
 
   onSubmit(form) {
-    const query = (document.querySelector('.input') as HTMLInputElement).value;
-    this.search(query);
+    this.search(form.value.query);
   }
 
   search(search) {

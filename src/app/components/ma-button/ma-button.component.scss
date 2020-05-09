@@ -11,4 +11,7 @@ button {
         color: var(--main--white);
         font-weight: 600;
     }
+    &:hover {
+        background: red;
+    }
 }

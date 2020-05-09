@@ -7,14 +7,13 @@
         <div class="music__item__content__title">
             <h5>{{item.name}}</h5>
             <p>{{item.artists[0].name}}</p>
-            <div>stars</div>
         </div>
         <div class="music__item__content__body">
             <small>Top de maissssssss, recomendo fortemente!!!</small>
             <small>- Vinicius Oliveira</small>
         </div>
         <div class="music__item__content__footer">
-            <small>view more...</small>
+            <a [routerLink]="['/song']" [state]="{ data: item }"><small>view more...</small></a>
         </div>
     </div>
 </div>

@@ -22,6 +22,8 @@ import { MaLineComponent } from './components/ma-line/ma-line.component';
 import { MaNavbarInternComponent } from './components/ma-navbar-intern/ma-navbar-intern.component';
 import { MaAlbumItemComponent } from './components/ma-album-item/ma-album-item.component';
 import { MaArtistItemComponent } from './components/ma-artist-item/ma-artist-item.component';
+import { MusicDetailPage } from './pages/music-detail/music-detail.component';
+import { LoadingComponent } from './components/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { MaArtistItemComponent } from './components/ma-artist-item/ma-artist-ite
     MaLineComponent,
     MaNavbarInternComponent,
     MaAlbumItemComponent,
-    MaArtistItemComponent
+    MaArtistItemComponent,
+    MusicDetailPage,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,

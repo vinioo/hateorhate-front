@@ -1,11 +1,10 @@
+<ma-loading *ngIf="loading"></ma-loading>
 <ma-navbar-intern (searchQuery)="getSearchQuery($event)"></ma-navbar-intern>
 <div class="full search">
   <main class="wrapper">
+    < back to recommended
     <div class="main__title">
       <h3>Search results for <span>{{search}}</span></h3>
-      <div>
-        <h5>Filter by:</h5>
-      </div>
       <h4>Songs</h4>
     </div>
     <ma-line></ma-line>
@@ -28,4 +27,3 @@
     </section>
   </main>
 </div>
-<!-- <ma-player></ma-player> -->

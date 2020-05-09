@@ -7,14 +7,12 @@
         </div>
         <div class="navbar__search">
             <form #f="ngForm" (ngSubmit)="onSubmit(f)">
-                <ma-input size="small" id="query" [(ngModel)]="query" name="query"></ma-input>
+                <input id="query" class="--small" [(ngModel)]="query" name="query">
                 <button type="submit">Enviar</button>
             </form>
         </div>
-        <div class="navbar__login">
-            <a class="bold">
-                login
-            </a>
+        <div class="navbar__user">
+            <div></div>
         </div>
     </div>
 </div>

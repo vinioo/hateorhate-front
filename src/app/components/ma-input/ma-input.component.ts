@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'ma-input',
@@ -7,15 +7,23 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 
 export class MaInputComponent implements OnInit {
+  @Output() valueChange = new EventEmitter();
+
   @Input() placeholder: string;
   @Input() size = 'default';
   @Input() name;
   @Input() id;
-  // @Input() modelName;
+  @Input() value: any = null;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+
+
+  change(value: any): void {
+    this.value = value;
+    this.valueChange.emit(this.value);
+  }
 }
