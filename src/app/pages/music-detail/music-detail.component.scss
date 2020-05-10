@@ -1,9 +1,9 @@
 @import 'src/assets/scss/_main.scss';
 
-.content {
+.detail {
     background: var(--gradient--primary);
     height: 100%;
-    .main__title {
+    &__title {
         display: flex;
         flex-direction: row;
         padding-top: 42px;
@@ -17,13 +17,51 @@
             }
         }
     }
-    .main__detail {
+    &__detail {
         section:first-child {
-            img {
-                min-width: 258px;
-                max-height: 250px;
-            }
             display: flex;
+            height: 350px;
+            img {
+                min-width: 358px;
+                max-height: 350px;
+                margin-right: 40px;
+            }
+        }
+    }
+    &__info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        h4 {
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+    }
+    &__ratings {
+        margin-top: 64px;
+        &__title {
+            h2 {
+                font-weight: 600;
+                letter-spacing: 3px; 
+                margin-bottom: 8px;
+            }
+            text-align: center;
+        }
+        &__content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: 0 auto;
+            width: 75%;
+            &__item {
+                margin-top: 16px;
+                display: grid;
+                justify-content: space-between;
+                grid-template-columns: repeat(5, minmax(60px, 120px));
+                grid-column-gap: 60px;
+                grid-row-gap: 40px;
+                border-bottom: .8px solid rgba(233, 233, 233, .2);
+            }
         }
     }
 }

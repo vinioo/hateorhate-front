@@ -7,9 +7,9 @@
       "severity": "warning"
     },
     "quotemark": [true, "single"],
-    "component-class-suffix": true,
+    "component-class-suffix": false,
     "contextual-lifecycle": true,
-    "directive-class-suffix": true,
+    "directive-class-suffix": false,
     "directive-selector": [
       true,
       "attribute",
@@ -20,7 +20,8 @@
       true,
       "element",
       "app",
-      "kebab-case"
+      "kebab-case",
+      "ma"
     ],
     "import-blacklist": [
       true,
@@ -60,7 +61,7 @@
     "no-var-requires": false,
     "variable-name": false,
     "no-string-literal": false,
-    "no-unused-expression": false,
+    "no-unused-expression": false,    
     "object-literal-key-quotes": [
       true,
       "as-needed"

@@ -7,7 +7,7 @@ import { PlayerService } from 'src/app/services/player.service';
   styleUrls: ['./music-item.component.scss']
 })
 export class MusicItemComponent implements OnInit {
-  @Input() item;
+  @Input() song;
 
   open: boolean;
   playing: boolean;
@@ -20,7 +20,7 @@ export class MusicItemComponent implements OnInit {
   }
 
   async togglePlayer() {
-    this.music = new Audio(this.item?.preview_url);
+    this.music = new Audio(this.song?.preview_url);
     this.playerService.play(this.music);
   }
 

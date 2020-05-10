@@ -9,12 +9,28 @@
         margin-right: 16px; 
         box-sizing: border-box;
         position: relative;
+        &__overlay {
+            &__icon {
+                width: 40px;
+                height: 40px;
+                z-index: 5;
+            }
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            z-index: 2;
+            opacity: 0;
+        }
         h4 {
             position: absolute;
             width: 158px;
             height: 42px;
             font-weight: bold;
-            z-index: 2;
+            z-index: 3;
             bottom: 0;
             display: flex;
             justify-content: center;
@@ -26,14 +42,24 @@
             background: var(--main--black);
             width: 158px;
             height: 42px;
-            z-index: 1;
+            z-index: 2;
             position: absolute;
             bottom: 0;
             opacity: .9;
         }
-        img {
+        .image {
             min-width: 158px;
             max-height: 150px;
+        }
+        &:hover {
+            .music__item__image__overlay {
+                background: rgba(0,0,0, 0.2);
+                z-index: 4;
+                opacity: 1 !important;
+                img {
+                    cursor: pointer;
+                }
+            }
         }
     }
     &__content {

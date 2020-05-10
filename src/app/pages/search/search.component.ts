@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { SpotifyService } from '../../services/spotify.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { SpotifyService } from '../../services/spotify.service';
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss']
 })
-export class SearchPage implements OnInit {
+export class SearchPage implements OnInit, OnChanges {
   public search = 'Strokes';
   public albums = [];
   public artists = [];
@@ -22,6 +22,10 @@ export class SearchPage implements OnInit {
     this.albums = response.albums.items;
     this.artists = response.artists.items;
     this.loading = false;
+  }
+
+  ngOnChanges() {
+    alert('oie');
   }
 
   async getSearchQuery($event) {

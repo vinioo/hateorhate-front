@@ -16,7 +16,7 @@ const routes: Routes = [
   { path: 'search', component: SearchPage },
   { path: 'login', component: LoginPage },
   { path: 'recommended', component: RecommendedPage },
-  { path: 'song', component: MusicDetailPage }
+  { path: 'song/:id', component: MusicDetailPage }
 ];
 
 @NgModule({

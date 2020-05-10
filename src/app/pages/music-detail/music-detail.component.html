@@ -1,22 +1,57 @@
 <ma-navbar-intern></ma-navbar-intern>
-<div class="full content">
-    <main class="wrapper">
-        <div>
-            <div class="main__title">
-                <h3>{{item.name}} - {{item.artists[0].name}} </h3>
-            </div>
-            <ma-line></ma-line>
-            <div class="main__detail">
-                <section>
-                    <img src="{{item.album.images[0].url}}">
-                    <h3>teste</h3>
-                </section>
+<div class="full detail">
+  <main class="wrapper">
+    <div>
+      <div class="detail__title">
+        <h3>{{ song.name }} - {{ song.artists[0].name }}</h3>
+      </div>
+      <ma-line></ma-line>
+      <div class="detail__detail">
+        <section>
+          <img class="detail__image" src="{{ song.album.images[0].url }}" />
+          <div class="detail__info">
+            <div>
+              <h4>OVERALL RATING</h4>
+              <p>8.5</p>
             </div>
             <div>
-                commentarios
+              <h4>MOST RELEVANT COMMENT</h4>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur, ipsa at? Inventore, perspiciatis
+                corrupti ducimus a modi architecto, veniam, beatae odio eligendi voluptas eos officiis? Suscipit,
+                mollitia recusandae. Iusto, eum.
+              </p>
             </div>
-            <textarea></textarea>
-            <ma-button>Add rating</ma-button>
+            <div>
+              <h4>VOTE NOW</h4>
+              1  2  3  4  5  6  7  8  9  10
+              <ma-button>add vote</ma-button>
+            </div>
         </div>
-    </main>
+    </section>
+      </div>
+      <div class="detail__ratings">
+          <div class="detail__ratings__title">
+              <h2>RATINGS</h2>
+              <P>LAST RATINGS ADDED</P>
+          </div>
+          <div class="detail__ratings__content">
+              <div class="detail__ratings__content__item">
+                  <div>Numero</div>
+                  <div>Foto usuário</div>
+                  <div>Nome usuário</div>
+                  <div>Conteudo da avaliação</div>
+                  <div>Nota</div>
+              </div>
+              <div class="detail__ratings__content__item">
+                <div>Numero</div>
+                <div>Foto usuário</div>
+                <div>Nome usuário</div>
+                <div>Conteudo da avaliação</div>
+                <div>Nota</div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </main>
 </div>
