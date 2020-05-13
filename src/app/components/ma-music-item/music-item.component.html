@@ -3,7 +3,7 @@
         <div class="music__item__image__overlay">
             <img class="music__item__image__overlay__icon" src="/assets/icons/play.png" (click)="togglePlayer()" />
         </div>
-        <h4>8.5</h4>
+        <h4>{{song.note}}</h4>
         <img class="image" src={{song.album.images[0].url}} (click)="togglePlayer()">
     </div>
     <div class="music__item__content">

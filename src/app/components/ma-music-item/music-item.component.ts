@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { PlayerService } from 'src/app/services/player.service';
+import { NotasService } from 'src/app/services/notas.service';
 
 @Component({
   selector: 'ma-music-item',
@@ -13,10 +14,12 @@ export class MusicItemComponent implements OnInit {
   playing: boolean;
   music: HTMLAudioElement;
 
+
   constructor(private playerService: PlayerService) {
   }
 
   ngOnInit(): void {
+    
   }
 
   async togglePlayer() {
