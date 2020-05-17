@@ -1,5 +1,6 @@
+@import 'src/assets/scss/_main.scss';
+
 .rating__container {
-  height: 40px;
   box-sizing: border-box;
   display: flex;
   div {
@@ -16,6 +17,9 @@
     cursor: pointer;
     position: relative;
     z-index: 1;
+    font-family: $barlow;
+    font-weight: bold;
+    color: var(--primary--darker);
   }
 
   .low {

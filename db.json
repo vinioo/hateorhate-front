@@ -7,112 +7,25 @@
       "userId": 1
     },
     {
-      "id": 78681,
-      "songId": "3213211",
-      "value": 9,
-      "userId": 6137
-    },
-    {
-      "id": 37662,
-      "value": 9,
-      "userId": 40206
-    },
-    {
-      "id": 26440,
-      "songId": "2QZ7WLBE8h2y1Y5Fb8RYbH",
-      "value": 9,
-      "userId": 10336
-    },
-    {
-      "id": 67855,
-      "value": 9,
-      "userId": 65464
-    },
-    {
-      "id": 43339,
-      "value": 9,
-      "userId": 21299
-    },
-    {
-      "id": 57560,
-      "value": 9,
-      "userId": 47721
-    },
-    {
-      "id": 5887,
-      "value": 9,
-      "userId": 79731
-    },
-    {
-      "id": 37500,
-      "value": 9,
-      "userId": 62057
-    },
-    {
-      "id": 77494,
       "songId": "7kzKAuUzOITUauHAhoMoxA",
-      "value": 9,
-      "userId": 73715
+      "value": 3,
+      "userId": 29399,
+      "ratingText": "good de mais",
+      "id": 2
     },
     {
-      "id": 55050,
-      "songId": "7kzKAuUzOITUauHAhoMoxA",
-      "value": 9,
-      "userId": 76028
-    },
-    {
-      "id": 56662,
-      "songId": "57Xjny5yNzAcsxnusKmAfA",
-      "value": 9,
-      "userId": 26796
-    },
-    {
-      "id": 70502,
-      "songId": "57Xjny5yNzAcsxnusKmAfA",
-      "value": 9,
-      "userId": 85059
-    },
-    {
-      "id": 82082,
-      "songId": "57Xjny5yNzAcsxnusKmAfA",
+      "songId": "7mitXLIMCflkhZiD34uEQI",
       "value": 1,
-      "userId": 95611
+      "userId": 57477,
+      "ratingText": "ruim de mais",
+      "id": 3
     },
     {
-      "id": 28850,
-      "songId": "7kzKAuUzOITUauHAhoMoxA",
-      "value": "1.00",
-      "userId": 15209
-    },
-    {
-      "id": 54891,
-      "songId": "4fPBB44eDH71YohayI4eKV",
-      "value": "0.00",
-      "userId": 3847
-    },
-    {
-      "id": 32703,
-      "songId": "5ruzrDWcT0vuJIOMW7gMnW",
-      "value": "1.00",
-      "userId": 99500
-    },
-    {
-      "id": 59263,
-      "songId": "2t0wwvR15fc3K1ey8OiOaN",
-      "value": "3.00",
-      "userId": 35998
-    },
-    {
-      "id": 57491,
-      "songId": "2mDYYGaGd9uXKkK2YhDA3i",
-      "value": "2.00",
-      "userId": 19510
-    },
-    {
-      "id": 53397,
-      "songId": "7kzKAuUzOITUauHAhoMoxA",
-      "value": "8.00",
-      "userId": 48252
+      "songId": "70Vdd1gx5tn84jkAU31ASv",
+      "value": 1,
+      "userId": 42630,
+      "ratingText": "ruim",
+      "id": 4
     }
   ]
 }

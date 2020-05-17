@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'ma-button',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ma-button.component.scss']
 })
 export class MaButtonComponent implements OnInit {
+  @Input() variant: string;
   constructor() { }
 
   ngOnInit(): void {

@@ -1,4 +1,4 @@
-button {
+.button {
     width: 320px;
     height: 56px;
     border-radius: 56px;
@@ -13,5 +13,8 @@ button {
     }
     &:hover {
         background: red;
+    }
+    &--small {
+        width:  220px !important;
     }
 }

@@ -11,11 +11,11 @@
           <img class="detail__image" src="{{ song.album.images[0].url }}" />
           <div class="detail__info">
             <div>
-              <h4>OVERALL RATING</h4>
-              <p>8.5</p>
+              <h4>Overall Rating</h4>
+              <h3>8.5</h3>
             </div>
             <div>
-              <h4>MOST RELEVANT COMMENT</h4>
+              <h4>Most Relevant Comment</h4>
               <p>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur, ipsa at? Inventore, perspiciatis
                 corrupti ducimus a modi architecto, veniam, beatae odio eligendi voluptas eos officiis? Suscipit,
@@ -23,12 +23,14 @@
               </p>
             </div>
             <div>
-              <h4>VOTE NOW</h4>
-              <ma-rating></ma-rating>
-              <h4>LEAVE A COMMENT</h4>
+              <h4>Vote Now</h4>
+              <ma-rating (ratingClicked)="setRating($event)"></ma-rating>
+            </div>
+            <div>
+              <h4>Share your thoughts</h4>
               <form #f="ngForm" (ngSubmit)="onSubmit(f)">
-                <textarea [(ngModel)]="ratingText" name="ratingText"></textarea>
-                <ma-button>add vote</ma-button>
+                <input class="input"[(ngModel)]="ratingText" name="ratingText">
+                <ma-button variant="small">add vote</ma-button>
               </form>
             </div>
           </div>
@@ -40,13 +42,6 @@
           <P>LAST RATINGS ADDED</P>
         </div>
         <div class="detail__ratings__content">
-          <div class="detail__ratings__content__item">
-            <div>Numero</div>
-            <div>Foto usuário</div>
-            <div>Nome usuário</div>
-            <div>Conteudo da avaliação</div>
-            <div>Nota</div>
-          </div>
           <div class="detail__ratings__content__item">
             <div>Numero</div>
             <div>Foto usuário</div>

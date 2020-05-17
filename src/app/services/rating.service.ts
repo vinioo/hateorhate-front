@@ -15,13 +15,15 @@ export class RatingService {
     return this.httpClient.get(`${this.BASE_URL}/ratings`, { params }).toPromise();
   }
 
-  public setRating({songId, ratingText}) {
-    return this.httpClient.post(`${this.BASE_URL}/ratings`, {
-      songId,
-      value: Math.floor(Math.random() * 10).toFixed(2),
-      userId: Math.floor(Math.random() * 99999),
-      ratingText,
-    }).toPromise();
+  public setRating({ songId, ratingText, value }) {
+    return this.httpClient
+      .post(`${this.BASE_URL}/ratings`, {
+        songId,
+        value,
+        userId: Math.floor(Math.random() * 99999),
+        ratingText,
+      })
+      .toPromise();
   }
 
   getSongRatings = async (songs) => {

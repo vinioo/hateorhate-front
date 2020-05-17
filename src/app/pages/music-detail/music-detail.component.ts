@@ -13,6 +13,7 @@ export class MusicDetailPage implements OnInit {
   public song: SpotifyApi.TrackObjectFull | any; // change it
   private songId: string;
   public ratingText: string;
+  private rating: number;
 
   constructor(
     private route: ActivatedRoute,
@@ -36,10 +37,15 @@ export class MusicDetailPage implements OnInit {
     }
   }
 
+  setRating(rating) {
+    this.rating = Number(rating.trim());
+  }
+
   async onSubmit(form) {
     await this.ratingService.setRating({
+      value: this.rating,
       songId: this.song.id,
-      ratingText: form.value.ratingText
+      ratingText: form.value.ratingText,
     });
   }
 }
