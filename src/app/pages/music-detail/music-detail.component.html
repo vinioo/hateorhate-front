@@ -24,33 +24,37 @@
             </div>
             <div>
               <h4>VOTE NOW</h4>
-              1  2  3  4  5  6  7  8  9  10
-              <ma-button (click)="addRating()">add vote</ma-button>
+              <ma-rating></ma-rating>
+              <h4>LEAVE A COMMENT</h4>
+              <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+                <textarea [(ngModel)]="ratingText" name="ratingText"></textarea>
+                <ma-button>add vote</ma-button>
+              </form>
             </div>
-        </div>
-    </section>
+          </div>
+        </section>
       </div>
       <div class="detail__ratings">
-          <div class="detail__ratings__title">
-              <h2>RATINGS</h2>
-              <P>LAST RATINGS ADDED</P>
+        <div class="detail__ratings__title">
+          <h2>RATINGS</h2>
+          <P>LAST RATINGS ADDED</P>
+        </div>
+        <div class="detail__ratings__content">
+          <div class="detail__ratings__content__item">
+            <div>Numero</div>
+            <div>Foto usuário</div>
+            <div>Nome usuário</div>
+            <div>Conteudo da avaliação</div>
+            <div>Nota</div>
           </div>
-          <div class="detail__ratings__content">
-              <div class="detail__ratings__content__item">
-                  <div>Numero</div>
-                  <div>Foto usuário</div>
-                  <div>Nome usuário</div>
-                  <div>Conteudo da avaliação</div>
-                  <div>Nota</div>
-              </div>
-              <div class="detail__ratings__content__item">
-                <div>Numero</div>
-                <div>Foto usuário</div>
-                <div>Nome usuário</div>
-                <div>Conteudo da avaliação</div>
-                <div>Nota</div>
-            </div>
+          <div class="detail__ratings__content__item">
+            <div>Numero</div>
+            <div>Foto usuário</div>
+            <div>Nome usuário</div>
+            <div>Conteudo da avaliação</div>
+            <div>Nota</div>
           </div>
+        </div>
       </div>
     </div>
   </main>

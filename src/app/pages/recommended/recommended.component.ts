@@ -20,9 +20,9 @@ export class RecommendedPage implements OnInit {
     const response: any = await this.spotifyService.getRecommendations();
     this.songs = response.tracks;
 
-    this.songs.map((song) => {
-      this.ratingService.getRatings(song.id).subscribe((data) => {});
-    });
+    // this.songs.map((song) => {
+    //   this.ratingService.getRatings(song.id).subscribe((data) => {});
+    // });
     this.loading = false;
   }
 }

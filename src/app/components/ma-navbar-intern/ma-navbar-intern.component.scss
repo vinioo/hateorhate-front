@@ -43,7 +43,12 @@
                 height: 100%;
                 position: absolute;
                 z-index: 1;
-            }
+                background: transparent;
+                border: none;
+                cursor: pointer;
+                right: 8px;
+                top: 2px;
+              }
             
         }
     }

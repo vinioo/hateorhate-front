@@ -9,18 +9,40 @@ export class RatingService {
 
   constructor(private httpClient: HttpClient) {}
 
-  public getRatings(songId: string) {
+  private getRatings(songId: string): any {
     const params = new HttpParams().set('songId', songId);
 
-    return this.httpClient.get(`${this.BASE_URL}/ratings`, { params });
+    return this.httpClient.get(`${this.BASE_URL}/ratings`, { params }).toPromise();
   }
 
-  public setRating(songId) {
+  public setRating({songId, ratingText}) {
     return this.httpClient.post(`${this.BASE_URL}/ratings`, {
-      id: Math.floor(Math.random() * 99999),
       songId,
-      value: 9,
+      value: Math.floor(Math.random() * 10).toFixed(2),
       userId: Math.floor(Math.random() * 99999),
-    });
+      ratingText,
+    }).toPromise();
   }
+
+  getSongRatings = async (songs) => {
+    const newSongs = [];
+    for (const song of songs) {
+      const response: any[] = await this.getRatings(song.id);
+
+      if (response.length) {
+        let averageRating = 0;
+        response.map((res) => {
+          averageRating += res.value;
+        });
+        newSongs.push({
+          ...song,
+          rating: (averageRating / response.length).toFixed(1),
+        });
+      } else {
+        newSongs.push(song);
+      }
+    }
+
+    return newSongs;
+  };
 }

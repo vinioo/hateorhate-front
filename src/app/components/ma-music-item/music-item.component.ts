@@ -24,6 +24,7 @@ export class MusicItemComponent implements OnInit {
   async togglePlayer() {
     this.music = new Audio(this.song?.preview_url);
     this.playerService.play(this.music);
+    this.playing = this.playerService.isPlaying;
   }
 
 }

@@ -59,6 +59,60 @@
       "songId": "7kzKAuUzOITUauHAhoMoxA",
       "value": 9,
       "userId": 76028
+    },
+    {
+      "id": 56662,
+      "songId": "57Xjny5yNzAcsxnusKmAfA",
+      "value": 9,
+      "userId": 26796
+    },
+    {
+      "id": 70502,
+      "songId": "57Xjny5yNzAcsxnusKmAfA",
+      "value": 9,
+      "userId": 85059
+    },
+    {
+      "id": 82082,
+      "songId": "57Xjny5yNzAcsxnusKmAfA",
+      "value": 1,
+      "userId": 95611
+    },
+    {
+      "id": 28850,
+      "songId": "7kzKAuUzOITUauHAhoMoxA",
+      "value": "1.00",
+      "userId": 15209
+    },
+    {
+      "id": 54891,
+      "songId": "4fPBB44eDH71YohayI4eKV",
+      "value": "0.00",
+      "userId": 3847
+    },
+    {
+      "id": 32703,
+      "songId": "5ruzrDWcT0vuJIOMW7gMnW",
+      "value": "1.00",
+      "userId": 99500
+    },
+    {
+      "id": 59263,
+      "songId": "2t0wwvR15fc3K1ey8OiOaN",
+      "value": "3.00",
+      "userId": 35998
+    },
+    {
+      "id": 57491,
+      "songId": "2mDYYGaGd9uXKkK2YhDA3i",
+      "value": "2.00",
+      "userId": 19510
+    },
+    {
+      "id": 53397,
+      "songId": "7kzKAuUzOITUauHAhoMoxA",
+      "value": "8.00",
+      "userId": 48252
     }
   ]
 }

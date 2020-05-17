@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { SpotifyService } from 'src/app/services/spotify.service';
 import { RatingService } from 'src/app/services/rating.service';
+import { FormControl, FormGroup, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'music-detail',
@@ -11,6 +12,7 @@ import { RatingService } from 'src/app/services/rating.service';
 export class MusicDetailPage implements OnInit {
   public song: SpotifyApi.TrackObjectFull | any; // change it
   private songId: string;
+  public ratingText: string;
 
   constructor(
     private route: ActivatedRoute,
@@ -34,7 +36,10 @@ export class MusicDetailPage implements OnInit {
     }
   }
 
-  addRating() {
-    this.ratingService.setRating(this.song.id).subscribe((data) => console.log(data));
+  async onSubmit(form) {
+    await this.ratingService.setRating({
+      songId: this.song.id,
+      ratingText: form.value.ratingText
+    });
   }
 }

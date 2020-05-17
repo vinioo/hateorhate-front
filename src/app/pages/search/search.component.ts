@@ -19,25 +19,10 @@ export class SearchPage implements OnInit, OnChanges {
   async ngOnInit() {
     this.loading = true;
     const response: any = await this.spotifyService.search(this.search);
-    this.tracks = response.tracks.items;
     this.albums = response.albums.items;
     this.artists = response.artists.items;
+    this.tracks = await this.ratingService.getSongRatings(response.tracks.items);
     this.loading = false;
-
-    this.tracks = this.tracks.map((song) => {
-      this.ratingService.getRatings(song.id).subscribe((data: any) => {
-        if (data[0].value) {
-          song = {
-            ...song,
-            rating: data[0].value,
-          };
-        }
-      },(err) => {}, () => {{
-        console.log('teste', this.tracks);
-      }});
-      return song;
-    });
-
   }
 
   ngOnChanges() {
