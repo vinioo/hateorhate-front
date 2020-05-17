@@ -1,0 +1,64 @@
+{
+  "ratings": [
+    {
+      "id": 1,
+      "songId": "3213211",
+      "value": 9,
+      "userId": 1
+    },
+    {
+      "id": 78681,
+      "songId": "3213211",
+      "value": 9,
+      "userId": 6137
+    },
+    {
+      "id": 37662,
+      "value": 9,
+      "userId": 40206
+    },
+    {
+      "id": 26440,
+      "songId": "2QZ7WLBE8h2y1Y5Fb8RYbH",
+      "value": 9,
+      "userId": 10336
+    },
+    {
+      "id": 67855,
+      "value": 9,
+      "userId": 65464
+    },
+    {
+      "id": 43339,
+      "value": 9,
+      "userId": 21299
+    },
+    {
+      "id": 57560,
+      "value": 9,
+      "userId": 47721
+    },
+    {
+      "id": 5887,
+      "value": 9,
+      "userId": 79731
+    },
+    {
+      "id": 37500,
+      "value": 9,
+      "userId": 62057
+    },
+    {
+      "id": 77494,
+      "songId": "7kzKAuUzOITUauHAhoMoxA",
+      "value": 9,
+      "userId": 73715
+    },
+    {
+      "id": 55050,
+      "songId": "7kzKAuUzOITUauHAhoMoxA",
+      "value": 9,
+      "userId": 76028
+    }
+  ]
+}
