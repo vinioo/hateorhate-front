@@ -1,76 +1,83 @@
 @import 'src/assets/scss/_main.scss';
 
 .navbar {
-    width: 100%;
-    height: 80px;
-    background: var(--primary--darker);
+  width: 100%;
+  height: 80px;
+  background: var(--primary--darker);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+  z-index: 2;
+  font-weight: 500;
+  ul {
+    display: flex;
+    li {
+      margin: 8px;
+      list-style: none;
+    }
+  }
+
+  &-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    text-transform: uppercase;
-    z-index: 2;
-    font-weight: 500;
-    ul {
-        display: flex;
-        li {
-            margin: 8px;
-            list-style: none;
-        }
-    }
+    height: 100%;
+  }
 
-    &-wrapper {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+  &-left {
+    display: flex;
+  }
+
+  &__search {
+    form {
+      display: flex;
+      justify-content: flex-end;
+      position: relative;
+      width: 100%;
+      input {
+        width: 380px;
+      }
+      button {
+        border-radius: 20px;
         height: 100%;
-    }
-
-    &-left {
-        display: flex;
-    }
-
-    &__search {
-        form {
-            display: flex;
-            justify-content: flex-end;
-            position: relative;
-            width: 100%;
-            input {
-                width: 380px;
-            }
-            button {
-                border-radius: 20px;
-                height: 100%;
-                position: absolute;
-                z-index: 1;
-                background: transparent;
-                border: none;
-                cursor: pointer;
-                right: 8px;
-                top: 2px;
-              }
-            
+        position: absolute;
+        z-index: 1;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        right: 8px;
+        top: 2px;
+        img {
+          width: 24px;
+          height: 24px;
         }
+      }
     }
+  }
 
-    &__actions {
-        margin-left: 32px;
-    }
+  &__actions {
+    margin-left: 32px;
+  }
 
-    &__user {
-        display: flex;
-        align-items: center;
-        height: 50px;
-        background: lightcoral;
-        width: 50px;
-        border-radius: 50%;
+  &__user {
+    width: 100px;
+    div {
+      background: lightcoral;
+      height: 50px;
+      width: 50px;
     }
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+  }
 
-    &__actions, &__login {
-        a {
-            color: var(--main--text--secondary);
-            margin-left: 40px;
-            text-transform: uppercase;
-        }
+  &__actions,
+  &__login {
+    a {
+      color: var(--main--text--secondary);
+      margin-left: 40px;
+      text-transform: uppercase;
     }
+  }
 }

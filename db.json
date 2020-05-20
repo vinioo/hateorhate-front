@@ -26,6 +26,20 @@
       "userId": 42630,
       "ratingText": "ruim",
       "id": 4
+    },
+    {
+      "songId": "7kzKAuUzOITUauHAhoMoxA",
+      "value": 3,
+      "userId": 9026,
+      "ratingText": "very good song",
+      "id": 5
+    },
+    {
+      "songId": "7kzKAuUzOITUauHAhoMoxA",
+      "value": 8,
+      "userId": 49194,
+      "ratingText": "muito bom cara",
+      "id": 6
     }
   ]
 }

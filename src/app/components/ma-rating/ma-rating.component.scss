@@ -20,13 +20,17 @@
     font-family: $barlow;
     font-weight: bold;
     color: var(--primary--darker);
+
+    &.active {
+      color: var(--main--white);
+    }
   }
 
   .low {
     &:hover {
       background: red;
     }
-&.active {
+    &.active {
       background: red;
     }
   }

@@ -4,15 +4,15 @@ import { FormControl, FormGroup, NgForm } from '@angular/forms';
 @Component({
   selector: 'ma-navbar-intern',
   templateUrl: './ma-navbar-intern.component.html',
-  styleUrls: ['./ma-navbar-intern.component.scss']
+  styleUrls: ['./ma-navbar-intern.component.scss'],
 })
 export class MaNavbarInternComponent implements OnInit {
   @Output() searchQuery = new EventEmitter();
   query: string;
+  theme: string = 'dark';
 
-  constructor() { }
-  ngOnInit(): void {
-  }
+  constructor() {}
+  ngOnInit(): void {}
 
   onSubmit(form) {
     this.search(form.value.query);
@@ -22,4 +22,13 @@ export class MaNavbarInternComponent implements OnInit {
     this.searchQuery.emit(search);
   }
 
+  toggleTheme() {
+    if (!document.documentElement.dataset.theme) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      this.theme = 'dark';
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+      this.theme = 'light';
+    }
+  }
 }

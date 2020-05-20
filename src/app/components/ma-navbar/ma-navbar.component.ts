@@ -12,15 +12,4 @@ export class MaNavbarComponent implements OnInit {
 
   async ngOnInit() {
   }
-
-  toggleTheme() {
-    if (!document.documentElement.dataset.theme) {
-      document.documentElement.setAttribute('data-theme', 'dark')
-      this.theme = 'dark';
-    } else {
-      document.documentElement.removeAttribute('data-theme')
-      this.theme = 'light';
-    }
-  }
-
 }

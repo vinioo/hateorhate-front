@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
+import { isArray } from 'util';
 
 @Injectable({
   providedIn: 'root',
@@ -27,8 +28,15 @@ export class RatingService {
   }
 
   getSongRatings = async (songs) => {
+    let songsArr = [];
+    if (Array.isArray(songs)) {
+      songsArr = songs;
+    } else {
+      songsArr.push(songs);
+    }
+    console.log(songsArr);
     const newSongs = [];
-    for (const song of songs) {
+    for (const song of songsArr) {
       const response: any[] = await this.getRatings(song.id);
 
       if (response.length) {
@@ -39,6 +47,7 @@ export class RatingService {
         newSongs.push({
           ...song,
           rating: (averageRating / response.length).toFixed(1),
+          ratings: response,
         });
       } else {
         newSongs.push(song);

@@ -30,7 +30,9 @@ export class MusicDetailPage implements OnInit {
       });
 
       if (this.songId) {
-        this.song = await this.spotifyService.getTrackById(this.songId);
+        const song = await this.ratingService.getSongRatings(await this.spotifyService.getTrackById(this.songId));
+        this.song = song[0];
+        console.log(this.song);
       } else {
         return undefined;
       }
@@ -38,7 +40,7 @@ export class MusicDetailPage implements OnInit {
   }
 
   setRating(rating) {
-    this.rating = Number(rating.trim());
+    this.rating = Number(rating.value.trim());
   }
 
   async onSubmit(form) {

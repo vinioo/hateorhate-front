@@ -1,11 +1,13 @@
 <div class="music__item">
     <div class="music__item__image">
         <div class="music__item__image__overlay" [class.show]="playing">
-            <img *ngIf="playing" class="music__item__image__overlay__icon" src="/assets/icons/pause.svg" (click)="togglePlayer()" />
-            <img *ngIf="!playing" class="music__item__image__overlay__icon" src="/assets/icons/play.svg" (click)="togglePlayer()" />
-
+            <img *ngIf="playing" class="music__item__image__overlay__icon" src="/assets/icons/pause.svg"
+                (click)="togglePlayer()" />
+            <img *ngIf="!playing" class="music__item__image__overlay__icon" src="/assets/icons/play.svg"
+                (click)="togglePlayer()" />
         </div>
-        <h4>{{song.rating}}</h4>
+        <h4 *ngIf="song.rating">{{song.rating}}</h4>
+        <h4 *ngIf="!song.rating">-</h4>
         <img class="image" src={{song.album.images[0].url}} (click)="togglePlayer()">
     </div>
     <div class="music__item__content">

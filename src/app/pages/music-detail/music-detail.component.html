@@ -1,18 +1,18 @@
 <ma-navbar-intern></ma-navbar-intern>
-<div class="full detail">
+<div class="full detail" *ngIf="song">
   <main class="wrapper">
     <div>
       <div class="detail__title">
-        <h3>{{ song.name }} - {{ song.artists[0].name }}</h3>
+        <h3>{{ song?.name }} - {{ song?.artists[0].name }}</h3>
       </div>
       <ma-line></ma-line>
       <div class="detail__detail">
         <section>
-          <img class="detail__image" src="{{ song.album.images[0].url }}" />
+          <ma-big-music imageSrc="{{ song?.album.images[0].url }}"></ma-big-music>
           <div class="detail__info">
             <div>
               <h4>Overall Rating</h4>
-              <h3>8.5</h3>
+              <h3>{{ song.rating }}</h3>
             </div>
             <div>
               <h4>Most Relevant Comment</h4>
@@ -29,8 +29,8 @@
             <div>
               <h4>Share your thoughts</h4>
               <form #f="ngForm" (ngSubmit)="onSubmit(f)">
-                <input class="input"[(ngModel)]="ratingText" name="ratingText">
-                <ma-button variant="small">add vote</ma-button>
+                <input class="input" [(ngModel)]="ratingText" name="ratingText">
+                <ma-button class="button" variant="small">vote!</ma-button>
               </form>
             </div>
           </div>
@@ -41,14 +41,38 @@
           <h2>RATINGS</h2>
           <P>LAST RATINGS ADDED</P>
         </div>
-        <div class="detail__ratings__content">
-          <div class="detail__ratings__content__item">
-            <div>Numero</div>
-            <div>Foto usuário</div>
-            <div>Nome usuário</div>
-            <div>Conteudo da avaliação</div>
-            <div>Nota</div>
+        <div class="detail__ratings__content" *ngIf="song.ratings">
+          <div class="detail__ratings__content__item detail__ratings__content__item__title">
+            <div>
+              <p>Number</p>
+            </div>
+            <div>
+              <p>User</p>
+            </div>
+            <div>
+              <p>Content</p>
+            </div>
+            <div>
+              <p>Value</p>
+            </div>
           </div>
+          <div class="detail__ratings__content__item" *ngFor="let rating of song.ratings; index as i">
+            <div>
+              <p>{{i + 1}}</p>
+            </div>
+            <div>
+              <p>Nome usuário</p>
+            </div>
+            <div>
+              <p>{{ rating.ratingText }}</p>
+            </div>
+            <div>
+              <p>{{ rating.value }}</p>
+            </div>
+          </div>
+        </div>
+        <div class="detail__ratings__empty" *ngIf="!song.ratings">
+          <p>Any ratings to show</p>
         </div>
       </div>
     </div>

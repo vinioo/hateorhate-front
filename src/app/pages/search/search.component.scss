@@ -1,29 +1,29 @@
 @import 'src/assets/scss/_main.scss';
 
 .search {
-    background: var(--gradient--primary);
-    height: auto;
-    padding-bottom: 4rem;
-    .main__title {
-        display: flex;
-        flex-direction: column;
-        padding-top: 42px;
-        div {
-            margin-top: 16px;
-        }
-        h3 {
-            font-weight: 600;
-            margin-bottom: 24px;
-            span {
-                font-weight: 700;
-            }
-        }
+  background: var(--gradient--primary);
+  height: auto;
+  padding-bottom: 4rem;
+  .main__title {
+    display: flex;
+    flex-direction: column;
+    padding-top: 42px;
+    div {
+      margin-top: 16px;
     }
-    section {
-        margin-top: 40px;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, 400px);
-        justify-content: space-between;
-        row-gap: 32px;
+    h3 {
+      font-weight: 600;
+      margin-bottom: 24px;
+      span {
+        font-weight: 700;
+      }
     }
+  }
+  section {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 400px);
+    justify-content: space-between;
+    row-gap: 32px;
+  }
 }

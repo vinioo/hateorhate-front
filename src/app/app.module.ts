@@ -25,6 +25,7 @@ import { MaArtistItemComponent } from './components/ma-artist-item/ma-artist-ite
 import { MusicDetailPage } from './pages/music-detail/music-detail.component';
 import { LoadingComponent } from './components/loading/loading.component';
 import { MaRatingComponent } from './components/ma-rating/ma-rating.component';
+import { MaBigMusicComponent } from './components/ma-big-music/ma-big-music.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { MaRatingComponent } from './components/ma-rating/ma-rating.component';
     MaArtistItemComponent,
     MusicDetailPage,
     LoadingComponent,
-    MaRatingComponent
+    MaRatingComponent,
+    MaBigMusicComponent
   ],
   imports: [
     BrowserModule,

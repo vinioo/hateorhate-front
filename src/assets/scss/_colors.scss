@@ -25,7 +25,8 @@ html {
     --accent-darker: '';
     --complementary--light: '';
     --complementary--darker: '';
-    --gradient--primary: linear-gradient(180deg, #F5F5F5 0%, #FAFAFA 94.56%);;
+    --gradient--primary: linear-gradient(180deg, #F5F5F5 0%, #FAFAFA 94.56%);
+    --border--color: rgba(233, 233, 233, 0.95);
 }
 
 html[data-theme='dark'] {
@@ -44,4 +45,5 @@ html[data-theme='dark'] {
     --complementary--light: '';
     --complementary--darker: '';
     --gradient--primary: linear-gradient(180deg, #303A52 20.55%, #171B27 100%);
+    --border--color: rgba(233, 233, 233, 0.2);
 }

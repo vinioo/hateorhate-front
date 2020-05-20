@@ -1,0 +1,9 @@
+<div class="music__album">
+    <div class="music__album__overlay">
+        <img *ngIf="false" class="music__album__overlay__icon" src="/assets/icons/pause.svg"
+             />
+        <img *ngIf="true" class="music__album__overlay__icon" src="/assets/icons/play.svg"
+            />
+    </div>
+    <img src="{{imageSrc}}" class="music__album__image" />
+</div>
