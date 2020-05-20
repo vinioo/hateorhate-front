@@ -10,13 +10,16 @@ import { MaNavbarComponent } from '../components/ma-navbar/ma-navbar.component';
 import { MaCardComponent } from '../components/ma-card/ma-card.component';
 import { MaFooterComponent } from '../components/ma-footer/ma-footer.component';
 import { MusicDetailPage } from '../pages/music-detail/music-detail.component';
+import { RegisterPage } from '../pages/register/register.component';
 
 const routes: Routes = [
   { path: '', component: HomePage },
   { path: 'search', component: SearchPage },
   { path: 'login', component: LoginPage },
   { path: 'recommended', component: RecommendedPage },
-  { path: 'song/:id', component: MusicDetailPage }
+  { path: 'song/:id', component: MusicDetailPage },
+  { path: 'register', component: RegisterPage },
+
 ];
 
 @NgModule({

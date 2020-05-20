@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 
 import { RouteRoutingModule } from './route/route-routing.module';
 import { HttpClientModule } from '@angular/common/http';
@@ -26,6 +26,7 @@ import { MusicDetailPage } from './pages/music-detail/music-detail.component';
 import { LoadingComponent } from './components/loading/loading.component';
 import { MaRatingComponent } from './components/ma-rating/ma-rating.component';
 import { MaBigMusicComponent } from './components/ma-big-music/ma-big-music.component';
+import { RegisterPage } from './pages/register/register.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { MaBigMusicComponent } from './components/ma-big-music/ma-big-music.comp
     MusicDetailPage,
     LoadingComponent,
     MaRatingComponent,
-    MaBigMusicComponent
+    MaBigMusicComponent,
+    RegisterPage
   ],
   imports: [
     BrowserModule,
@@ -59,6 +61,7 @@ import { MaBigMusicComponent } from './components/ma-big-music/ma-big-music.comp
     FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule { }

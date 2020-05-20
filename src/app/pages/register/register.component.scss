@@ -59,11 +59,23 @@
   text-align: center;
   &__inputs {
     width: 380px;
-    text-align: left;
+    div {
+    width: 100%;
+    height: 140px;
+      &.upload {
+        width: 100px;
+        height: 100px;
+        background: lightgrey;
+        border-radius: 50%;
+        margin-bottom: 8px;
+      }
+      margin: 0 auto;
+      margin-bottom: 8px;
+    }
+    text-align: center;
     small {
-      margin-left: 18px;
       cursor: pointer;
-      color: var(--main--blue);
+      color: var(--main--text);
     }
   }
   a {

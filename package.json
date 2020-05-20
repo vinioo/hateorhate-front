@@ -21,6 +21,7 @@
     "@angular/platform-browser-dynamic": "~9.0.7",
     "@angular/router": "~9.0.7",
     "@types/spotify-api": "0.0.3",
+    "blip-ds": "^1.36.0",
     "json-server": "^0.16.1",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",

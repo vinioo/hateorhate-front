@@ -44,10 +44,22 @@ export class MusicDetailPage implements OnInit {
   }
 
   async onSubmit(form) {
-    await this.ratingService.setRating({
-      value: this.rating,
-      songId: this.song.id,
-      ratingText: form.value.ratingText,
-    });
+    try {
+      await this.ratingService.setRating({
+        value: this.rating,
+        songId: this.song.id,
+        ratingText: form.value.ratingText,
+      });
+
+      const toast = document.createElement('bds-toast');
+      document.querySelector('bds-toast-container').shadowRoot.appendChild(toast);
+      toast.create({
+        variant: 'success',
+        toastText: 'Rating added!',
+        toastTitle: 'Uhuul! We have received your rating',
+        duration: 5,
+        actionType: 'icon'
+      });
+    } catch (err) {}
   }
 }
