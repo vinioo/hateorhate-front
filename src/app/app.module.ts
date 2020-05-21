@@ -52,16 +52,11 @@ import { RegisterPage } from './pages/register/register.component';
     LoadingComponent,
     MaRatingComponent,
     MaBigMusicComponent,
-    RegisterPage
+    RegisterPage,
   ],
-  imports: [
-    BrowserModule,
-    RouteRoutingModule,
-    HttpClientModule,
-    FormsModule
-  ],
+  imports: [BrowserModule, RouteRoutingModule, HttpClientModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class AppModule { }
+export class AppModule {}

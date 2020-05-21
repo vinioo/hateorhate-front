@@ -24,7 +24,6 @@ export class RatingService {
         userId: Math.floor(Math.random() * 99999),
         ratingText,
       })
-      .toPromise();
   }
 
   getSongRatings = async (songs) => {

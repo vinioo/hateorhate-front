@@ -61,15 +61,31 @@
   }
 
   &__user {
-    width: 100px;
+    width: 120px;
     div {
       background: lightcoral;
       height: 50px;
       width: 50px;
+      border-radius: 50%;
     }
     display: flex;
     align-items: center;
-    border-radius: 50%;
+    justify-content: flex-end;
+    button {
+      margin-left: 8px;
+      outline: none;
+      border: none;
+      cursor: pointer;
+      background: transparent;
+      img {
+        width: 24px;
+        height: 24px;
+        &:hover {
+          transform: scale(1.1);
+          transition: all ease-in .2s;
+        }
+      }
+    }
   }
 
   &__actions,

@@ -30,9 +30,7 @@ export class MusicDetailPage implements OnInit {
       });
 
       if (this.songId) {
-        const song = await this.ratingService.getSongRatings(await this.spotifyService.getTrackById(this.songId));
-        this.song = song[0];
-        console.log(this.song);
+        this.getList();
       } else {
         return undefined;
       }
@@ -49,6 +47,8 @@ export class MusicDetailPage implements OnInit {
         value: this.rating,
         songId: this.song.id,
         ratingText: form.value.ratingText,
+      }).subscribe(() => {
+        this.getList();
       });
 
       const toast = document.createElement('bds-toast');
@@ -61,5 +61,11 @@ export class MusicDetailPage implements OnInit {
         actionType: 'icon'
       });
     } catch (err) {}
+  }
+
+  async getList() {
+    const song = await this.ratingService.getSongRatings(await this.spotifyService.getTrackById(this.songId));
+    this.song = song[0];
+    console.log(this.song);
   }
 }

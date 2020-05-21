@@ -2,8 +2,8 @@
     <div class="wrapper navbar-wrapper">
         <div class="navbar-left">
             <div class="navbar__logo">
-                <a *ngIf="theme === 'dark'" [routerLink]="['']"><img src="assets/img/rateorhatelogo.svg" alt="logo"></a>
-                <a *ngIf="theme === 'light'"[routerLink]="['']"><img src="assets/img/rateorhateblack.svg" alt="logo"></a>
+                <a *ngIf="theme === 'dark'" [routerLink]="['/']"><img src="assets/img/rateorhatelogo.svg" alt="logo"></a>
+                <a *ngIf="theme === 'light'"[routerLink]="['/']"><img src="assets/img/rateorhateblack.svg" alt="logo"></a>
             </div>
         </div>
         <div class="navbar__search">
@@ -14,7 +14,10 @@
         </div>
         <div class="navbar__user">
             <div></div>
-            <button (click)="toggleTheme()">toggle dark</button>
+            <button (click)="toggleTheme()" class={{theme}}>
+                <img *ngIf="theme === 'dark'" src="assets/icons/lamp.svg" alt="logo">
+                <img *ngIf="theme === 'light'" src="assets/icons/lamp-dark.svg" alt="logo">
+            </button>
         </div>
     </div>
 </div>
