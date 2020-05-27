@@ -23,7 +23,7 @@ export class RatingService {
         value,
         userId: Math.floor(Math.random() * 99999),
         ratingText,
-      })
+      });
   }
 
   getSongRatings = async (songs) => {

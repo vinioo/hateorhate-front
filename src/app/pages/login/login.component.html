@@ -9,14 +9,14 @@
     <section class="login__form">
         <div class="login__form__singup">
             <a [routerLink]="['/register']">SIGN UP</a>
-            <form>
+            <form #f="ngForm" (ngSubmit)="onSubmit(f)">
                 <h3>Login</h3>
                 <div class="login__form__singup__inputs">
-                    <input class="input" placeholder="email">
-                    <input type="password" class="input" placeholder="password">
+                    <input class="input" placeholder="email" [(ngModel)]="email" name="email">
+                    <input type="password" class="input" placeholder="password" [(ngModel)]="password" name="password">
                     <small>forgot my password</small>
                 </div>
-                <ma-button>sign in</ma-button>
+                <ma-button>JOIN US</ma-button>
             </form>
             <div>
                 <small>terms and conditions</small>
