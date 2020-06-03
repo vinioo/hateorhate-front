@@ -8,7 +8,7 @@
         </div>
         <div class="navbar__search">
             <form #f="ngForm" (ngSubmit)="onSubmit(f)">
-                <input id="query" class="--small" [(ngModel)]="query" name="query">
+                <input id="query" class="--small" [(ngModel)]="query" name="query" placeholder="Search for an artist, song or album">
                 <button type="submit"><img src="/assets/icons/search.png"></button>
             </form>
         </div>

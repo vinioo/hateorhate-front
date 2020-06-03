@@ -1,5 +1,5 @@
 .home {
-    overflow-x: hidden;
+    overflow: hidden;
     background: var(--main--black);
     height: calc(100%);
     z-index: 1;
@@ -13,8 +13,18 @@
         position: absolute;
         background: url('/assets/img/blob.svg');
         background-repeat: no-repeat;
-        background-size: 110% 110%;
-        
+        background-size: 115% 110%;
+    }
+    &__image {
+        width: 70%;
+        height: 100%;
+        bottom: -80px;
+        left: 35%;
+        z-index: -1;
+        background: url('/assets/img/woman.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
     }
     .wrapper {
         display: flex;
