@@ -52,7 +52,8 @@ export class MusicDetailPage implements OnInit {
       });
 
       const toast = document.createElement('bds-toast');
-      document.querySelector('bds-toast-container').shadowRoot.appendChild(toast);
+      document.body.appendChild(toast);
+
       toast.create({
         variant: 'success',
         toastText: 'Rating added!',
@@ -66,6 +67,5 @@ export class MusicDetailPage implements OnInit {
   async getList() {
     const song = await this.ratingService.getSongRatings(await this.spotifyService.getTrackById(this.songId));
     this.song = song[0];
-    console.log(this.song);
   }
 }

@@ -15,16 +15,14 @@
         background-repeat: no-repeat;
         background-size: 115% 110%;
     }
-    &__image {
-        width: 70%;
-        height: 100%;
-        bottom: -80px;
-        left: 35%;
-        z-index: -1;
-        background: url('/assets/img/woman.png');
-        background-size: contain;
-        background-repeat: no-repeat;
+    &__image img {
+        width: auto;
+        height: 85%;
         position: absolute;
+        transform: translate(-10%, -40%);
+        @media only screen and (max-width: 1024px) {
+            display: none;
+        }
     }
     .wrapper {
         display: flex;
@@ -46,12 +44,27 @@
                 color: var(--grey--5);
                 font-weight: 400;
             }
+            @media only screen and (max-width: 1024px) {
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+                h1 {
+                    line-height: 56px;
+                }
+                width: 100%;
+            }
         }
+    }
+    @media only screen and (min-width: 768px) {
+
     }
 }
 
 .row__text {
-    padding: 8rem;
+    height: 380px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     text-align: center;
     h2 {
         font-weight: 900;
@@ -73,6 +86,10 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        @media only screen and (max-width: 1024px) {
+            flex-direction: column;
+            width: 100%;
+        }
     }
     .image {
         width: 50%;
@@ -89,10 +106,14 @@
         h4 {
             font-weight: 400;
         }
+        @media only screen and (max-width: 1024px) {
+            flex-direction: column;
+            width: 100%;
+        }
     }
 }
 
 footer {
     background: var(--main--black);
-    height: 120px;
+    height: 100px;
 }
