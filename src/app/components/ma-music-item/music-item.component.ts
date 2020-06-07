@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { PlayerService } from 'src/app/services/player.service';
+import { ToastService } from 'src/app/services/toast.service';
 
 @Component({
   selector: 'ma-music-item',
@@ -14,7 +15,7 @@ export class MusicItemComponent implements OnInit {
   music: HTMLAudioElement;
 
 
-  constructor(private playerService: PlayerService) {
+  constructor(private playerService: PlayerService, private toastService: ToastService) {
   }
 
   ngOnInit(): void {
@@ -22,9 +23,19 @@ export class MusicItemComponent implements OnInit {
   }
 
   async togglePlayer() {
-    this.music = new Audio(this.song?.preview_url);
-    this.playerService.play(this.music);
-    this.playing = this.playerService.isPlaying;
+    if (this.song.preview_url) {
+      this.music = new Audio(this.song?.preview_url);
+      this.playerService.play(this.music);
+      this.playing = this.playerService.isPlaying;
+    } else {
+      this.toastService.open({
+        duration: 10,
+        variant: 'error',
+        toastTitle: 'We cant play this song right now',
+        toastText: 'Sorry! This song is not avaiable in your region',
+        actionType: 'icon'
+      });
+    }
   }
 
 }

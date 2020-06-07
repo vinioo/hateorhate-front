@@ -5,24 +5,37 @@ import { RatingService } from 'src/app/services/rating.service';
 @Component({
   selector: 'app-recommended',
   templateUrl: './recommended.component.html',
-  styleUrls: ['./recommended.component.scss']
+  styleUrls: ['./recommended.component.scss'],
 })
 export class RecommendedPage implements OnInit {
-
-  constructor(private spotifyService: SpotifyService, private ratingService: RatingService) { }
+  constructor(private spotifyService: SpotifyService, private ratingService: RatingService) {}
 
   public songs = [];
   public loading: boolean;
-  public notes: {nota:string}[];
+  public topSongs = [];
 
   async ngOnInit(): Promise<void> {
-    this.loading = true;
-    const response: any = await this.spotifyService.getRecommendations();
-    this.songs = response.tracks;
+    try {
+      this.loading = true;
+      const recommendations: any = await this.spotifyService.getRecommendations();
+      this.songs = recommendations.tracks;
+      this.setTopRatedSongs();
+    } catch (err) {
+      console.error(err);
+    } finally {
+      this.loading = false;
+    }
 
-    // this.songs.map((song) => {
-    //   this.ratingService.getRatings(song.id).subscribe((data) => {});
-    // });
-    this.loading = false;
+  }
+
+  private setTopRatedSongs() {
+    this.ratingService.getTopRatedSongs().subscribe(async (res: []) => {
+      const songIds = (res as any).map((song) => song.songId);
+      const uniqueIds = [...new Set(songIds)];
+      const topRated: any = await this.spotifyService.getTrackById(
+        uniqueIds.slice(0, 6).toString()
+      );
+      this.topSongs = await this.ratingService.getSongRatings(topRated.tracks);
+    });
   }
 }

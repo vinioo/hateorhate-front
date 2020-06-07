@@ -41,7 +41,7 @@
     <div class="wrapper row__text">
         <h2>WHAT ARE YOU WAITING FOR?</h2>
         <h4>We’re excited to have you in the community!</h4>
-        <ma-button>JOIN US</ma-button>
+        <ma-button [routerLink]="['/register']">JOIN US</ma-button>
     </div>
 </section>
 <footer>
@@ -49,16 +49,16 @@
         <div class="navbar__logo">
             <img src="assets/img/rateorhatelogo.svg" alt="logo">
         </div>
-    <div>
-    <div>
+    </div>
     <div>
         <ul>
             <li><a [routerLink]="['/register']">SIGNUP</a></li>
-            <li><a [routerLink]="['/login']" class="bold"> login</a></li>
+            <li><a [routerLink]="['/login']"> login</a></li>
             <li><a [routerLink]="['/recommended']">HOW TO USE</a></li>
             <li><a [routerLink]="['/search']">HELP</a></li>
         </ul>
+    </div>
     <div>
         icons
-    <div>
+    </div>
 </footer>

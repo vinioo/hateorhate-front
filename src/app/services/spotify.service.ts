@@ -104,10 +104,12 @@ export class SpotifyService {
     try {
       await this.authorize();
 
-      return this.httpClient.get(`https://api.spotify.com/v1/tracks/${id}`, this.generalHeaders).toPromise();
+      const params = new HttpParams().set('ids', id);
+
+      return this.httpClient.get(`https://api.spotify.com/v1/tracks/`,
+         { params, ...this.generalHeaders }).toPromise();
     } catch (err) {
       console.error(err);
     }
   }
-  
 }

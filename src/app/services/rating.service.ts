@@ -26,14 +26,14 @@ export class RatingService {
       });
   }
 
-  getSongRatings = async (songs) => {
+  public async getSongRatings(songs) {
     let songsArr = [];
     if (Array.isArray(songs)) {
       songsArr = songs;
     } else {
       songsArr.push(songs);
     }
-    console.log(songsArr);
+
     const newSongs = [];
     for (const song of songsArr) {
       const response: any[] = await this.getRatings(song.id);
@@ -54,5 +54,12 @@ export class RatingService {
     }
 
     return newSongs;
-  };
+  }
+
+  public getTopRatedSongs() {
+    const params = new HttpParams().set('_sort', 'value');
+
+    return this.httpClient
+    .get(`${this.BASE_URL}/ratings`, { params });
+  }
 }

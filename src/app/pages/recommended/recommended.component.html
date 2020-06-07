@@ -17,7 +17,7 @@
             </div>
             <ma-line></ma-line>
             <section>
-                <!-- O componente ma-music-album será exibido aqui (mostraremos 3 por linha) -->
+                <ma-music-item *ngFor="let item of topSongs" [song]="item"></ma-music-item>
             </section>
         </div>
     </main>
