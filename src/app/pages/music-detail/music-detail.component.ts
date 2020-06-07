@@ -68,4 +68,8 @@ export class MusicDetailPage implements OnInit {
     const song = await this.ratingService.getSongRatings(await this.spotifyService.getTrackById(this.songId));
     this.song = song[0];
   }
+
+  public back() {
+    window.history.back();
+  }
 }

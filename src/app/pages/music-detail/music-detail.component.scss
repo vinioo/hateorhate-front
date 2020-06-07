@@ -3,7 +3,10 @@
 .detail {
   background: var(--gradient--primary);
   padding-bottom: 4rem;
-  min-height: 100%;
+  height: auto;
+  min-height: calc(100% - 80px);
+  padding-top: 16px;
+  padding-bottom: 4rem;
   &__title {
     display: flex;
     flex-direction: row;
@@ -26,6 +29,18 @@
         min-width: 458px;
         max-height: 450px;
         margin-right: 40px;
+        @media only screen and (max-width: 1024px) {
+          width: 20px;
+          min-width: inherit;
+          max-height: inherit;
+          margin-right: 0px;
+        }
+      }
+      @media only screen and (max-width: 1024px) {
+        text-align: center;
+        height: 100%;
+        flex-direction: column;
+        width: 100%;
       }
     }
   }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SpotifyService } from '../../services/spotify.service';
 import { RatingService } from 'src/app/services/rating.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-recommended',
@@ -8,7 +9,7 @@ import { RatingService } from 'src/app/services/rating.service';
   styleUrls: ['./recommended.component.scss'],
 })
 export class RecommendedPage implements OnInit {
-  constructor(private spotifyService: SpotifyService, private ratingService: RatingService) {}
+  constructor(private spotifyService: SpotifyService, private ratingService: RatingService, private router: Router) {}
 
   public songs = [];
   public loading: boolean;
@@ -25,17 +26,18 @@ export class RecommendedPage implements OnInit {
     } finally {
       this.loading = false;
     }
-
   }
 
   private setTopRatedSongs() {
     this.ratingService.getTopRatedSongs().subscribe(async (res: []) => {
       const songIds = (res as any).map((song) => song.songId);
       const uniqueIds = [...new Set(songIds)];
-      const topRated: any = await this.spotifyService.getTrackById(
-        uniqueIds.slice(0, 6).toString()
-      );
+      const topRated: any = await this.spotifyService.getTrackById(uniqueIds.slice(0, 6).toString());
       this.topSongs = await this.ratingService.getSongRatings(topRated.tracks);
     });
+  }
+
+  public goToSearch($event) {
+    this.router.navigate(['/search'], { queryParams: { q: $event } });
   }
 }

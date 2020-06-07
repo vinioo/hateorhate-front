@@ -3,7 +3,9 @@
 .search {
   background: var(--gradient--primary);
   height: auto;
+  min-height: calc(100% - 80px);
   padding-bottom: 4rem;
+  padding-top: 16px;
   .main__title {
     display: flex;
     flex-direction: column;
@@ -25,5 +27,19 @@
     grid-template-columns: repeat(auto-fit, 400px);
     justify-content: space-between;
     row-gap: 32px;
+  }
+  .empty {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    img { 
+      max-width: 30%;
+    }
+    h5 {
+      margin-top: 24px;
+      color: var(--main--text--secondary);
+    }
   }
 }

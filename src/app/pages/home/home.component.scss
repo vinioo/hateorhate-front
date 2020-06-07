@@ -85,17 +85,21 @@
         min-height: 660px;
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
         @media only screen and (max-width: 1024px) {
             flex-direction: column;
             width: 100%;
         }
     }
-    .image {
-        width: 50%;
+    .image  {
+        width: 49%;
+        margin-right: 16px;
+        img {
+            width: 100%;
+        }
     } 
     .content {
-        width: 50%;
+        width: 49%;
         h2, h4 {
             color: var(--grey--5); 
         }

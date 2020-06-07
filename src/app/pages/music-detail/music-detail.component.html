@@ -1,6 +1,7 @@
 <ma-navbar-intern></ma-navbar-intern>
 <div class="full detail" *ngIf="song">
   <main class="wrapper">
+    <a (click)="back()" class="bold">< back</a>
     <div>
       <div class="detail__title">
         <h3>{{ song?.name }} - {{ song?.artists[0].name }}</h3>

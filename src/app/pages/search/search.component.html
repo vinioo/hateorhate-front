@@ -1,10 +1,10 @@
 <ma-loading *ngIf="loading"></ma-loading>
 <ma-navbar-intern (searchQuery)="getSearchQuery($event)"></ma-navbar-intern>
 <div class="full search">
-  <main class="wrapper">
-    <a>< back to recommended</a>
+  <main class="wrapper" *ngIf="searchContent">
+    <a [routerLink]="['/recommended']" class="bold">< back to recommended</a>
     <div class="main__title">
-      <h3>Search results for <span>{{search}}</span></h3>
+      <h3>Search results for <span>{{searchContent}}</span></h3>
       <h4>Songs</h4>
     </div>
     <ma-line></ma-line>
@@ -25,5 +25,9 @@
     <section>
       <ma-artist-item *ngFor="let item of artists" [item]="item"></ma-artist-item>
     </section>
+  </main>
+  <main class="wrapper empty" *ngIf="!searchContent">
+    <img src="assets/img/empty.svg">
+    <h5>Your search result will apper here. Let's start searching for something!</h5>
   </main>
 </div>
