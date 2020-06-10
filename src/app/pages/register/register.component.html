@@ -13,7 +13,10 @@
                 <h3>Sign Up</h3>
                 <div class="login__form__singup__inputs">
                     <div>
-                        <div class="upload"></div>
+                        <div class="upload">
+                            <input type="file" accept=".jpg, .jpeg, .png">
+                            <img src="/assets/icons/upload.png">
+                        </div>
                         <small>upload your profile picture</small>
                     </div>
                     <input class="input" placeholder="username" [(ngModel)]="username" name="username">

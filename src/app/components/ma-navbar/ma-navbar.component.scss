@@ -18,6 +18,10 @@
             margin-left: 8px;
             display: none;
         }
+        &:hover {
+            padding-bottom: 4px;
+            border-bottom: 2px solid #fafafa;
+        }
     }
     font-weight: 500;
     ul {

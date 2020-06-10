@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
+import { Router } from '@angular/router';
+import { ToastService } from 'src/app/services/toast.service';
 
 @Component({
   selector: 'ma-register',
@@ -11,13 +13,20 @@ export class RegisterPage implements OnInit {
   email: string;
   password: string;
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private router: Router, private toastService: ToastService) {}
 
   ngOnInit(): void {}
 
   onSubmit(form) {
     this.authService.newUser(form.value).subscribe(() => {
-      console.log('usuario inserido com sucesso!');
+      this.authService.loggedUser = form;
+      this.toastService.open({
+        variant: 'success',
+        toastTitle: 'Success!',
+        toastText: 'Successfully registered!',
+        actionType: 'icon'
+      });
+      this.router.navigate(['/recommended']);
     });
   }
 }

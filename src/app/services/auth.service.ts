@@ -7,6 +7,8 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 export class AuthService {
   readonly BASE_URL = 'http://localhost:3000';
 
+  loggedUser: any;
+
   constructor(private httpClient: HttpClient) {}
 
   public getUser(user) {

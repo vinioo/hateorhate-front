@@ -45,8 +45,15 @@ export class SearchPage implements OnInit, OnChanges {
   }
 
   async getSearchQuery($event) {
-    this.searchContent = $event;
-    this.search(this.searchContent);
+    try {
+      this.loading = true;
+      this.searchContent = $event;
+      this.search(this.searchContent);
+    } catch (err) {
+      console.error(err);
+    } finally {
+      this.loading = false;
+    }
   }
 
   private async search(query: string) {

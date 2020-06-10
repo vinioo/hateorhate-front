@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormControl, FormGroup, NgForm } from '@angular/forms';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'ma-navbar-intern',
@@ -11,7 +12,7 @@ export class MaNavbarInternComponent implements OnInit {
   query: string;
   theme: string = 'dark';
 
-  constructor() {}
+  constructor(private authService: AuthService) {}
   ngOnInit(): void {}
 
   onSubmit(form) {

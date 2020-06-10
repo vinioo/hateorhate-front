@@ -187,6 +187,21 @@
       "email": "teste@teste.com",
       "password": "123456",
       "id": 3
+    },
+    {
+      "username": "vinicius",
+      "email": "vinicius@vinicius.com",
+      "password": "123456",
+      "id": 4
+    },
+    {
+      "username": "vinicius",
+      "email": "vinicius@teste.com",
+      "password": "123456",
+      "id": 5
+    },
+    {
+      "id": 6
     }
   ]
 }
