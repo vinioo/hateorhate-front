@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
 import { ToastService } from 'src/app/services/toast.service';
@@ -13,9 +13,35 @@ export class RegisterPage implements OnInit {
   email: string;
   password: string;
 
+  @ViewChild('uploadImage') uploadImage: ElementRef;
+  @ViewChild('uploadLabel') uploadLabel: ElementRef;
+
   constructor(private authService: AuthService, private router: Router, private toastService: ToastService) {}
 
   ngOnInit(): void {}
+
+  onFileChange(event) {
+    const file = event.target.files[0];
+
+    if (file) {
+      const reader = new FileReader();
+
+      reader.onload = (e) => {
+        this.uploadImage.nativeElement.style.backgroundImage = `url(${e.target.result})`;
+        this.uploadImage.nativeElement.classList.add('active');
+        this.uploadLabel.nativeElement.innerText = file.name;
+      };
+
+      reader.readAsDataURL(file);
+    } else {
+      console.error('invalid image!');
+      this.toastService.open({
+        variant: 'error',
+        toastText: 'Error trying to upload image!',
+        toastTitle: 'Oopsss :('
+      });
+    }
+  }
 
   onSubmit(form) {
     this.authService.newUser(form.value).subscribe(() => {
