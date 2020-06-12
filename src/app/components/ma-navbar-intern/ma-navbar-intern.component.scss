@@ -65,12 +65,26 @@
   }
 
   &__user {
-    width: 120px;
-    div {
-      background: lightcoral;
-      height: 50px;
-      width: 50px;
-      border-radius: 50%;
+    width: 60px;
+    height: 100%;
+    &__info {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      &__image {
+        background: grey;
+        background-size: cover;
+        background-position: center;
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+      }
+      small {
+        text-transform: lowercase;
+        color: var(--main--text);
+        align-self: center;
+      }
     }
     display: flex;
     align-items: center;

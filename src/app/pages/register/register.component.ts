@@ -12,6 +12,7 @@ export class RegisterPage implements OnInit {
   username: string;
   email: string;
   password: string;
+  image: string;
 
   @ViewChild('uploadImage') uploadImage: ElementRef;
   @ViewChild('uploadLabel') uploadLabel: ElementRef;
@@ -30,6 +31,7 @@ export class RegisterPage implements OnInit {
         this.uploadImage.nativeElement.style.backgroundImage = `url(${e.target.result})`;
         this.uploadImage.nativeElement.classList.add('active');
         this.uploadLabel.nativeElement.innerText = file.name;
+        this.image = e.target.result.toString();
       };
 
       reader.readAsDataURL(file);
@@ -38,19 +40,31 @@ export class RegisterPage implements OnInit {
       this.toastService.open({
         variant: 'error',
         toastText: 'Error trying to upload image!',
-        toastTitle: 'Oopsss :('
+        toastTitle: 'Oopsss :(',
       });
     }
   }
 
   onSubmit(form) {
-    this.authService.newUser(form.value).subscribe(() => {
-      this.authService.loggedUser = form;
+    const newUser = {
+      ...form.value,
+      image: this.image,
+    };
+
+    this.authService.newUser(newUser).subscribe(() => {
+      localStorage.setItem(
+        'user',
+        JSON.stringify({
+          username: newUser.username,
+          email: newUser.email,
+          image: newUser.image,
+        })
+      );
       this.toastService.open({
         variant: 'success',
         toastTitle: 'Success!',
         toastText: 'Successfully registered!',
-        actionType: 'icon'
+        actionType: 'icon',
       });
       this.router.navigate(['/recommended']);
     });

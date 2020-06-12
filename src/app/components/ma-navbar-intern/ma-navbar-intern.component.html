@@ -13,11 +13,16 @@
             </form>
         </div>
         <div class="navbar__user">
-            <div></div>
+            <div class="navbar__user__info">
+                <div class="navbar__user__info__image" #userImage>
+                </div>
+                <small>{{ user.username }}</small>
+            </div>
             <button (click)="toggleTheme()" class={{theme}}>
                 <img *ngIf="theme === 'dark'" src="assets/icons/lamp.svg" alt="logo">
                 <img *ngIf="theme === 'light'" src="assets/icons/lamp-dark.svg" alt="logo">
             </button>
+            <small (click)="logout()">sign out</small>
         </div>
     </div>
 </div>

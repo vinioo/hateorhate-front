@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
@@ -9,7 +10,7 @@ export class AuthService {
 
   loggedUser: any;
 
-  constructor(private httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient, private route: Router) {}
 
   public getUser(user) {
     const params = new HttpParams().set('email', user.email);
@@ -19,5 +20,10 @@ export class AuthService {
 
   public newUser(user) {
     return this.httpClient.post(`${this.BASE_URL}/user`, user);
+  }
+
+  public logout() {
+    localStorage.removeItem('user');
+    this.route.navigate(['/']);
   }
 }
