@@ -12,21 +12,20 @@ export class MusicItemComponent implements OnInit {
 
   open: boolean;
   playing: boolean;
-  music: HTMLAudioElement;
+  currentSong: HTMLAudioElement;
 
 
   constructor(private playerService: PlayerService, private toastService: ToastService) {
   }
 
   ngOnInit(): void {
-    
   }
 
   async togglePlayer() {
     if (this.song.preview_url) {
-      this.music = new Audio(this.song?.preview_url);
-      this.playerService.play(this.music);
-      this.playing = this.playerService.isPlaying;
+      this.currentSong = await this.playerService.play(new Audio(this.song?.preview_url));
+      this.playing = true;
+      this.addCurrentSongListeners();
     } else {
       this.toastService.open({
         duration: 10,
@@ -35,6 +34,15 @@ export class MusicItemComponent implements OnInit {
         toastText: 'Sorry! This song is not avaiable in your region',
         actionType: 'icon'
       });
+    }
+  }
+
+  addCurrentSongListeners() {
+    this.currentSong.onpause = () => {
+      this.playing = false;
+    }
+    this.currentSong.onended = () => {
+      this.playing = false;
     }
   }
 
