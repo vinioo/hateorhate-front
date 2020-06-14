@@ -19,7 +19,7 @@ export class RecommendedPage implements OnInit {
     try {
       this.loading = true;
       const recommendations: any = await this.spotifyService.getRecommendations();
-      this.songs = recommendations.tracks;
+      this.songs = await this.ratingService.getSongRatings(recommendations.tracks);
       this.setTopRatedSongs();
     } catch (err) {
       console.error(err);

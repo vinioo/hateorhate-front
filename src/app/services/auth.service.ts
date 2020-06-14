@@ -8,7 +8,12 @@ import { Router } from '@angular/router';
 export class AuthService {
   readonly BASE_URL = 'http://localhost:3000';
 
-  loggedUser: any;
+  loggedUser: {
+    id: number,
+    username: string,
+    email: string,
+    image: string;
+  };
 
   constructor(private httpClient: HttpClient, private route: Router) {}
 

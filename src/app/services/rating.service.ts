@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { isArray } from 'util';
+import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root',
@@ -8,7 +9,7 @@ import { isArray } from 'util';
 export class RatingService {
   readonly BASE_URL = 'http://localhost:3000';
 
-  constructor(private httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient, private authService: AuthService) {}
 
   private getRatings(songId: string): any {
     const params = new HttpParams().set('songId', songId);
@@ -21,7 +22,7 @@ export class RatingService {
       .post(`${this.BASE_URL}/ratings`, {
         songId,
         value,
-        userId: Math.floor(Math.random() * 99999),
+        username: this.authService.loggedUser.username,
         ratingText,
       });
   }

@@ -31,9 +31,8 @@ export class MusicDetailPage implements OnInit {
 
       if (this.songId) {
         this.getList();
-      } else {
-        return undefined;
-      }
+      } 
+      return;
     }
   }
 

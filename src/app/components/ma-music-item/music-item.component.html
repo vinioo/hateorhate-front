@@ -16,11 +16,12 @@
             <p>{{song.artists[0].name}}</p>
         </div>
         <div class="music__item__content__body">
-            <small>Top de maissssssss, recomendo fortemente!!!</small>
-            <small>- Vinicius Oliveira</small>
+            <small *ngIf="randomComment">{{randomComment}}</small>
+            <small *ngIf="!randomComment">any comments yet, what about writing the first one?</small>
+            <small *ngIf="commentAuthor">- {{commentAuthor}}</small>
         </div>
         <div class="music__item__content__footer">
-            <a [routerLink]="['/song', song.id]" [state]="{ data: song }"><small>view more...</small></a>
+            <a [routerLink]="['/song', song.id]" [state]="{ data: song }"><small>more...</small></a>
         </div>
     </div>
 </div>

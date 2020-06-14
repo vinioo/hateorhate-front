@@ -55,6 +55,7 @@ export class RegisterPage implements OnInit {
       localStorage.setItem(
         'user',
         JSON.stringify({
+          id: newUser.id,
           username: newUser.username,
           email: newUser.email,
           image: newUser.image,
