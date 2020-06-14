@@ -26,7 +26,7 @@ export class MusicDetailPage implements OnInit {
       this.song = history.state.data;
     } else {
       this.route.params.subscribe((params) => {
-        this.songId = params['id'];
+        this.songId = params.id;
       });
 
       if (this.songId) {
@@ -61,12 +61,12 @@ export class MusicDetailPage implements OnInit {
         duration: 5,
         actionType: 'icon'
       });
-    } catch (err) {}
+    } catch (err) {}  
   }
 
   async getList() {
     const song = await this.ratingService.getSongRatings(await this.spotifyService.getTrackById(this.songId));
-    this.song = song[0];
+    this.song = song[0].tracks[0] || song[0];
   }
 
   public back() {

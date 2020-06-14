@@ -29,7 +29,7 @@
     display: flex;
     @media only screen and (max-width: 1024px) {
       display: none;
-  }
+    }
   }
 
   &__search {
@@ -65,32 +65,36 @@
   }
 
   &__user {
-    width: 60px;
     height: 100%;
     &__info {
       width: 100%;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      align-items: center;
       &__image {
         background: grey;
         background-size: cover;
         background-position: center;
-        height: 50px;
-        width: 50px;
+        height: 40px;
+        width: 40px;
         border-radius: 50%;
+        margin-right: 8px;
       }
       small {
         text-transform: lowercase;
         color: var(--main--text);
         align-self: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 70px;
       }
     }
     display: flex;
     align-items: center;
     justify-content: flex-end;
     button {
-      margin-left: 8px;
       outline: none;
       border: none;
       cursor: pointer;
@@ -98,10 +102,19 @@
       img {
         width: 24px;
         height: 24px;
+        margin-right: 16px;
         &:hover {
           transform: scale(1.1);
-          transition: all ease-in .2s;
+          transition: all ease-in 0.2s;
         }
+      }
+    }
+    .logout {
+      cursor: pointer;
+      width: 40px;
+      text-align: center;
+      &:hover {
+        transform: scale(1.05);
       }
     }
     @media only screen and (max-width: 1024px) {

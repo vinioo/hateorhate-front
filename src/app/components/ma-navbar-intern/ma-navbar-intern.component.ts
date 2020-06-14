@@ -3,6 +3,7 @@ import { FormControl, FormGroup, NgForm } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 import { User } from 'src/app/pages/login/login.component';
 
+type Theme = 'light' | 'dark';
 @Component({
   selector: 'ma-navbar-intern',
   templateUrl: './ma-navbar-intern.component.html',
@@ -11,7 +12,7 @@ import { User } from 'src/app/pages/login/login.component';
 export class MaNavbarInternComponent implements OnInit, AfterViewInit {
   @Output() searchQuery = new EventEmitter();
   query: string;
-  theme: string = 'dark';
+  theme: Theme = 'dark';
   user: User;
 
   @ViewChild('userImage') userImage: ElementRef;
@@ -19,11 +20,13 @@ export class MaNavbarInternComponent implements OnInit, AfterViewInit {
   constructor(private authService: AuthService) {}
 
   ngOnInit(): void {
-    const user = localStorage.getItem('user');
+    const lsUser = localStorage.getItem('user');
+    const lsTheme = localStorage.getItem('theme').toString();
 
-    if (user) this.user = JSON.parse(user);
+    if (lsUser) this.user = JSON.parse(lsUser);
+    if (lsTheme) this.setTheme(lsTheme);
   }
-  
+
   ngAfterViewInit() {
     this.userImage.nativeElement.style.backgroundImage = `url(${this.user.image.toString()})`;
   }
@@ -38,12 +41,25 @@ export class MaNavbarInternComponent implements OnInit, AfterViewInit {
 
   toggleTheme() {
     if (!document.documentElement.dataset.theme) {
-      document.documentElement.setAttribute('data-theme', 'dark');
-      this.theme = 'dark';
+      this.setDarkTheme();
     } else {
-      document.documentElement.removeAttribute('data-theme');
-      this.theme = 'light';
+      this.setLightTheme();
     }
+  }
+
+  setTheme(theme: string) {
+    theme === 'dark' ? this.setDarkTheme() : this.setLightTheme();
+  }
+  setDarkTheme() {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    localStorage.setItem('theme', 'dark');
+    this.theme = 'dark';
+  }
+
+  setLightTheme() {
+    document.documentElement.removeAttribute('data-theme');
+    localStorage.setItem('theme', 'light');
+    this.theme = 'light';
   }
 
   logout() {
