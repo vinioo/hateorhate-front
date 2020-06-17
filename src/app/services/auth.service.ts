@@ -1,11 +1,11 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit, OnChanges } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
 })
-export class AuthService {
+export class AuthService implements OnChanges {
   readonly BASE_URL = 'http://localhost:3000';
 
   loggedUser: {
@@ -16,6 +16,13 @@ export class AuthService {
   };
 
   constructor(private httpClient: HttpClient, private route: Router) {}
+  
+  ngOnChanges() {
+    this.loggedUser = localStorage.get('user');
+      if (!this.loggedUser) {
+        // this.logout()
+      }
+  }
 
   public getUser(user) {
     const params = new HttpParams().set('email', user.email);

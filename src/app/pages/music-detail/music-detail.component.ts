@@ -28,12 +28,9 @@ export class MusicDetailPage implements OnInit {
       this.route.params.subscribe((params) => {
         this.songId = params.id;
       });
-
-      if (this.songId) {
-        this.getList();
-      } 
-      return;
     }
+    this.getList();
+    return;
   }
 
   setRating(rating) {
@@ -64,8 +61,11 @@ export class MusicDetailPage implements OnInit {
   }
 
   async getList() {
-    const song = await this.ratingService.getSongRatings(await this.spotifyService.getTrackById(this.songId));
-    this.song = song[0].tracks[0] || song[0];
+    const song: any = !this.song && await this.spotifyService.getTrackById(this.songId);
+
+    const songRatings = await this.ratingService.getSongRatings(song?.tracks || this.song);
+
+    this.song = songRatings[0] ?? songRatings[0]?.tracks[0]  
   }
 
   public back() {

@@ -52,6 +52,7 @@ export class RegisterPage implements OnInit {
     };
 
     this.authService.newUser(newUser).subscribe(() => {
+      this.authService.loggedUser = newUser;
       localStorage.setItem(
         'user',
         JSON.stringify({

@@ -22,7 +22,7 @@ export class RatingService {
       .post(`${this.BASE_URL}/ratings`, {
         songId,
         value,
-        username: this.authService.loggedUser.username,
+        username: 'username',
         ratingText,
       });
   }

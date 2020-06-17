@@ -25,6 +25,7 @@ export class LoginPage implements OnInit {
     this.authService.getUser(form.value).subscribe((user: User) => {
       if (user[0]) {
         if (user[0].password === form.value.password) {
+          this.authService.loggedUser = user[0];
           localStorage.setItem(
             'user',
             JSON.stringify({
