@@ -21,10 +21,10 @@ export class MaNavbarInternComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     const lsUser = localStorage.getItem('user');
-    const lsTheme = localStorage.getItem('theme').toString();
+    const lsTheme = localStorage.getItem('theme');
 
     if (lsUser) this.user = JSON.parse(lsUser);
-    if (lsTheme) this.setTheme(lsTheme);
+    if (lsTheme) this.setTheme(lsTheme.toString());
   }
 
   ngAfterViewInit() {
