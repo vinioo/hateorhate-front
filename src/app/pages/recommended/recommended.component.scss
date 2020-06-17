@@ -7,7 +7,9 @@
     padding-bottom: 4rem;
     .main__title {
         display: flex;
-        flex-direction: z;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
         padding-top: 42px;
         div {
             margin-top: 16px;

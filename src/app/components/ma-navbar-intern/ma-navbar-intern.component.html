@@ -3,26 +3,25 @@
         <div class="navbar-left">
             <div class="navbar__logo">
                 <a *ngIf="theme === 'dark'" [routerLink]="['/']"><img src="assets/img/rateorhatelogo.svg" alt="logo"></a>
-                <a *ngIf="theme === 'light'"[routerLink]="['/']"><img src="assets/img/rateorhateblack.svg" alt="logo"></a>
+                <a *ngIf="theme === 'light'" [routerLink]="['/']"><img src="assets/img/rateorhateblack.svg" alt="logo"></a>
             </div>
         </div>
         <div class="navbar__search">
             <form #f="ngForm" (ngSubmit)="onSubmit(f)">
-                <input id="query" class="--small" [(ngModel)]="query" name="query" placeholder="Search for an artist, song or album">
+                <input id="query" class="--small" [(ngModel)]="query" name="query"
+                    placeholder="Search for an artist, song or album">
                 <button type="submit"><img src="/assets/icons/search.png"></button>
             </form>
         </div>
         <div class="navbar__user">
             <button (click)="toggleTheme()" class={{theme}}>
-                <img *ngIf="theme === 'dark'" src="assets/icons/lamp.svg" alt="logo">
-                <img *ngIf="theme === 'light'" src="assets/icons/lamp-dark.svg" alt="logo">
+                <img *ngIf="theme === 'dark'" src="assets/icons/lamp.svg" alt="lamp">
+                <img *ngIf="theme === 'light'"src="assets/icons/lamp-dark.svg" alt="lamp">
             </button>
-            <small class="username">{{ user.username }}</small>
-            <div class="navbar__user__info">
-                <div class="navbar__user__info__image" #userImage>
-                </div>
-                <small (click)="logout()" class="logout">sign out</small>
-            </div>
+            <img *ngIf="theme === 'dark'" (click)="logout()" src="assets/icons/sair1.png"
+                alt="sign out">
+            <img *ngIf="theme === 'light'" (click)="logout()" src="assets/icons/sair2.png"
+                alt="sign out">
         </div>
     </div>
 </div>
