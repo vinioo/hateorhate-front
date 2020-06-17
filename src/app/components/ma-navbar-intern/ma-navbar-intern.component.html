@@ -16,7 +16,7 @@
             <div class="navbar__user__info">
                 <div class="navbar__user__info__image" #userImage>
                 </div>
-                <small>{{ user.username }}</small>
+                <small *ngIf="user">{{ user.username }}</small>
             </div>
             <button (click)="toggleTheme()" class={{theme}}>
                 <img *ngIf="theme === 'dark'" src="assets/icons/lamp.svg" alt="logo">
