@@ -202,6 +202,13 @@
       "email": "vinicius@vinicius.com",
       "password": "123456",
       "id": 4
+    },
+    {
+      "username": "teste",
+      "email": "vinicius@vinicius.com",
+      "password": "123456",
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAABmJLR0QA/wD/AP+gvaeTAAABy0lEQVRIidWWsYsTQRSHv5esyRaJQrC5KywEq8AR9i0EPNNpo/1hc42FCPaelXecf4GNhaUHIvbanEUw8SAkE4KQys4iTWw0zaoJY+PEZclxe8umuK/a+b3HfLuzO+wIMer1eqlcLj8XkV1gg2xMgKMoip6Nx+PfLvTiHb7vHwJPMgocm8Ce7/sAT1eKgF2AQqGw3e/3T7JYVPUW0Pk311JUWHE3ZJUAGGO68blOE62NiyNS1UeNRuNGIv6Suwh4USwWT8Iw3HaB53kt4DhvUQm4aq39GATBDkCv1/sJ3Mtb5PBF5G0YhgcAxpg/8WJyH60kCILPInIzRatYa/fDMNyoVCqP2+323BVSPVFKyRJr7cPZbPZBVa+cS5SRO0BXVa+tWwRg3cU6RcdAyxjz7Tyi7tkt/xGRV9Vq9a4x5ofLUn11xpjWaTVVtbGhFZHDwWBwkOzLc+kia+19J1HVS3mLfgHfReT2cDh8B9BsNi8D7+NNqZbuDB4sFov+aDT66oL5fN4BtnIVGWPerIi3ksHF+R9lFU1gecDIRBAEbitM4nnyHR0Be0BHVbO6HK/jg2J8UKvVPnmeVwKuA9WMggnwMoqi/el0unDhX2WagB0wFTPOAAAAAElFTkSuQmCC",
+      "id": 5
     }
   ]
 }

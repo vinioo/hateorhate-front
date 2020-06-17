@@ -28,7 +28,9 @@ export class MaNavbarInternComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    this.userImage.nativeElement.style.backgroundImage = `url(${this.user.image.toString()})`;
+    if (this.user) {
+      this.userImage.nativeElement.style.backgroundImage = `url(${this.user.image.toString()})`;
+    }
   }
 
   onSubmit(form) {

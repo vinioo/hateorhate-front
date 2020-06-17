@@ -2,8 +2,10 @@
     <div class="wrapper navbar-wrapper">
         <div class="navbar-left">
             <div class="navbar__logo">
-                <a *ngIf="theme === 'dark'" [routerLink]="['/']"><img src="assets/img/rateorhatelogo.svg" alt="logo"></a>
-                <a *ngIf="theme === 'light'" [routerLink]="['/']"><img src="assets/img/rateorhateblack.svg" alt="logo"></a>
+                <a *ngIf="theme === 'dark'" [routerLink]="['/']"><img src="assets/img/rateorhatelogo.svg"
+                        alt="logo"></a>
+                <a *ngIf="theme === 'light'" [routerLink]="['/']"><img src="assets/img/rateorhateblack.svg"
+                        alt="logo"></a>
             </div>
         </div>
         <div class="navbar__search">
@@ -14,14 +16,16 @@
             </form>
         </div>
         <div class="navbar__user">
+            <div class="navbar__user__info">
+                <small *ngIf="user" class="username">{{ user.username }}</small>
+                <div class="navbar__user__info__image" #userImage></div>
+            </div>
             <button (click)="toggleTheme()" class={{theme}}>
                 <img *ngIf="theme === 'dark'" src="assets/icons/lamp.svg" alt="lamp">
-                <img *ngIf="theme === 'light'"src="assets/icons/lamp-dark.svg" alt="lamp">
+                <img *ngIf="theme === 'light'" src="assets/icons/lamp-dark.svg" alt="lamp">
             </button>
-            <img *ngIf="theme === 'dark'" (click)="logout()" src="assets/icons/sair1.png"
-                alt="sign out">
-            <img *ngIf="theme === 'light'" (click)="logout()" src="assets/icons/sair2.png"
-                alt="sign out">
+            <img *ngIf="theme === 'dark'" (click)="logout()" src="assets/icons/sair1.png" alt="sign out">
+            <img *ngIf="theme === 'light'" (click)="logout()" src="assets/icons/sair2.png" alt="sign out">
         </div>
     </div>
 </div>

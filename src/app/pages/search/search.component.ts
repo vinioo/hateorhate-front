@@ -45,21 +45,22 @@ export class SearchPage implements OnInit, OnChanges {
   }
 
   async getSearchQuery($event) {
-    try {
       this.loading = true;
       this.searchContent = $event;
       this.search(this.searchContent);
-    } catch (err) {
-      console.error(err);
-    } finally {
-      this.loading = false;
-    }
   }
 
   private async search(query: string) {
-    const response: any = await this.spotifyService.search(query);
-    this.tracks = response.tracks.items;
-    this.albums = response.albums.items;
-    this.artists = response.artists.items;
+    try {
+      this.loading = true;
+      const response: any = await this.spotifyService.search(query);
+      this.tracks = response.tracks.items;
+      this.albums = response.albums.items;
+      this.artists = response.artists.items;
+    } catch (err) {
+      console.error(err)
+    } finally {
+      this.loading = false;
+    }
   }
 }
